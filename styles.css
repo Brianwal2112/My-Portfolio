@@ -1559,44 +1559,138 @@ footer p {
 
 /* Responsive About Page */
 @media (max-width: 768px) {
+  .about-hero {
+    padding: 2.5rem 1rem 1.5rem;
+  }
+
   .about-hero h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.3;
   }
 
   .about-hero .lead {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
+    margin-top: 1.5rem;
   }
 
   .about-card {
-    padding: 1.8rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .about-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
 
   .approach-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .approach-item {
+    padding: 1.5rem;
+  }
+
+  .approach-number {
+    font-size: 2rem;
+  }
+
+  .approach-item h4 {
+    font-size: 1.1rem;
   }
 
   .cta-section {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1rem;
+    margin: 1rem 0;
   }
 
   .cta-section h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .cta-section p {
+    font-size: 0.95rem;
+  }
+
+  .cta-section .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
   }
 
   .footer-content {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     text-align: center;
+  }
+
+  .footer-brand h3 {
+    font-size: 1.3rem;
   }
 
   .footer-links {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .about-hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-hero .lead {
+    font-size: 0.85rem;
+  }
+
+  .about-card {
+    padding: 1.2rem;
+  }
+
+  .about-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .about-card p {
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .approach-item h4 {
+    font-size: 1rem;
+  }
+
+  .approach-item p {
+    font-size: 0.85rem;
+  }
+
+  .cta-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .cta-section p {
+    font-size: 0.85rem;
   }
 }
 
