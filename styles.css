@@ -1695,6 +1695,220 @@ footer p {
 }
 
 /* ============================================
+   PROFESSIONAL SKILLS PAGE STYLES
+   ============================================ */
+
+/* Skills Hero */
+.skills-hero {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+.skills-hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--accent-color), #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skills-hero .lead {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Skills Category */
+.skills-category {
+  margin-bottom: 4rem;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(145deg, rgba(255, 23, 68, 0.05), transparent);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 23, 68, 0.1);
+}
+
+.category-header i {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.category-header h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.category-header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Advanced Skills Grid */
+.skills-grid-advanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Advanced Skill Card */
+.skill-card-advanced {
+  background: linear-gradient(145deg, var(--card-bg), rgba(255, 23, 68, 0.03));
+  padding: 1.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 23, 68, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-card-advanced:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 23, 68, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(255, 23, 68, 0.2), rgba(255, 23, 68, 0.1));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.skill-content h4 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.skill-content p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+/* Skill Tags */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-tags .tag {
+  background: rgba(255, 23, 68, 0.1);
+  color: var(--accent-color);
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 23, 68, 0.2);
+}
+
+/* Skill Meter */
+.skill-meter {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-meter .meter-fill {
+  flex: 1;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent-color), #ff6b6b);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.skill-meter span {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Responsive Skills Page */
+@media (max-width: 768px) {
+  .skills-hero {
+    padding: 2.5rem 1rem 1.5rem;
+  }
+
+  .skills-hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills-hero .lead {
+    font-size: 1rem;
+  }
+
+  .skills-grid-advanced {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .skill-card-advanced {
+    padding: 1.5rem;
+  }
+
+  .category-header {
+    padding: 1.5rem;
+  }
+
+  .category-header i {
+    font-size: 2rem;
+  }
+
+  .category-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .skill-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .skill-content p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .skill-card-advanced {
+    padding: 1.2rem;
+  }
+
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .skill-tags .tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+/* ============================================
    PROFESSIONAL CONTACT PAGE STYLES
    ============================================ */
 
