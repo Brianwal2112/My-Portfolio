@@ -101,7 +101,20 @@ function displayCurrentWeather(data) {
     
     if(weatherIconImg) {
         // In a real app, this would use actual weather icons
-        weatherIconImg.src = `https://source.unsplash.com/100x100/?${data.icon.replace(/-/g, '+')}`;
+        // Using reliable weather icon placeholder service
+        const iconMap = {
+            'sunny': 'https://cdn-icons-png.flaticon.com/128/869/869869.png',
+            'clear-night': 'https://cdn-icons-png.flaticon.com/128/3126/3126266.png',
+            'partly-cloudy-day': 'https://cdn-icons-png.flaticon.com/128/1163/1163657.png',
+            'partly-cloudy-night': 'https://cdn-icons-png.flaticon.com/128/3126/3126282.png',
+            'cloudy': 'https://cdn-icons-png.flaticon.com/128/414/414927.png',
+            'rain': 'https://cdn-icons-png.flaticon.com/128/1163/1163627.png',
+            'thunderstorm': 'https://cdn-icons-png.flaticon.com/128/1146/1146869.png',
+            'snow': 'https://cdn-icons-png.flaticon.com/128/642/642102.png',
+            'fog': 'https://cdn-icons-png.flaticon.com/128/2930/2930095.png',
+            'wind': 'https://cdn-icons-png.flaticon.com/128/2930/2930095.png'
+        };
+        weatherIconImg.src = iconMap[data.icon] || iconMap['partly-cloudy-day'];
         weatherIconImg.alt = data.description;
     }
 }
@@ -110,11 +123,24 @@ function displayCurrentWeather(data) {
 function displayHourlyForecast(forecast) {
     if(!hourlyForecastContainer) return;
     
+    const iconMap = {
+        'sunny': 'https://cdn-icons-png.flaticon.com/64/869/869869.png',
+        'clear-night': 'https://cdn-icons-png.flaticon.com/64/3126/3126266.png',
+        'partly-cloudy-day': 'https://cdn-icons-png.flaticon.com/64/1163/1163657.png',
+        'partly-cloudy-night': 'https://cdn-icons-png.flaticon.com/64/3126/3126282.png',
+        'cloudy': 'https://cdn-icons-png.flaticon.com/64/414/414927.png',
+        'rain': 'https://cdn-icons-png.flaticon.com/64/1163/1163627.png',
+        'thunderstorm': 'https://cdn-icons-png.flaticon.com/64/1146/1146869.png',
+        'snow': 'https://cdn-icons-png.flaticon.com/64/642/642102.png',
+        'fog': 'https://cdn-icons-png.flaticon.com/64/2930/2930095.png',
+        'wind': 'https://cdn-icons-png.flaticon.com/64/2930/2930095.png'
+    };
+
     hourlyForecastContainer.innerHTML = forecast.map(item => `
         <div class="forecast-item">
             <div class="forecast-time">${item.time}</div>
             <div class="forecast-icon">
-                <img src="https://source.unsplash.com/50x50/?${item.icon.replace(/-/g, '+')}" alt="${item.icon}">
+                <img src="${iconMap[item.icon] || iconMap['partly-cloudy-day']}" alt="${item.icon}" width="40" height="40">
             </div>
             <div class="forecast-temp">${item.temp}°F</div>
         </div>
@@ -125,11 +151,24 @@ function displayHourlyForecast(forecast) {
 function displayDailyForecast(forecast) {
     if(!dailyForecastContainer) return;
     
+    const iconMap = {
+        'sunny': 'https://cdn-icons-png.flaticon.com/64/869/869869.png',
+        'clear-night': 'https://cdn-icons-png.flaticon.com/64/3126/3126266.png',
+        'partly-cloudy-day': 'https://cdn-icons-png.flaticon.com/64/1163/1163657.png',
+        'partly-cloudy-night': 'https://cdn-icons-png.flaticon.com/64/3126/3126282.png',
+        'cloudy': 'https://cdn-icons-png.flaticon.com/64/414/414927.png',
+        'rain': 'https://cdn-icons-png.flaticon.com/64/1163/1163627.png',
+        'thunderstorm': 'https://cdn-icons-png.flaticon.com/64/1146/1146869.png',
+        'snow': 'https://cdn-icons-png.flaticon.com/64/642/642102.png',
+        'fog': 'https://cdn-icons-png.flaticon.com/64/2930/2930095.png',
+        'wind': 'https://cdn-icons-png.flaticon.com/64/2930/2930095.png'
+    };
+
     dailyForecastContainer.innerHTML = forecast.map(item => `
         <div class="daily-forecast-item">
             <div class="daily-forecast-day">${item.day}</div>
             <div class="daily-forecast-icon">
-                <img src="https://source.unsplash.com/60x60/?${item.icon.replace(/-/g, '+')}" alt="${item.icon}">
+                <img src="${iconMap[item.icon] || iconMap['partly-cloudy-day']}" alt="${item.icon}" width="40" height="40">
             </div>
             <div class="daily-forecast-desc">${item.desc}</div>
             <div class="daily-forecast-high-low">
@@ -243,7 +282,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mapTypeSelect.addEventListener('change', () => {
             const mapType = mapTypeSelect.value;
             // In a real app, this would load different map images based on type
-            weatherMapImg.src = `https://source.unsplash.com/1200x600/?weather,map,${mapType}`;
+            // Using a reliable weather radar placeholder
+            weatherMapImg.src = `https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=600&fit=crop`;
             showNotification(`Switched to ${mapType} map`);
         });
     }
@@ -251,8 +291,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const refreshMapBtn = document.getElementById('refresh-map');
     if(refreshMapBtn) {
         refreshMapBtn.addEventListener('click', () => {
-            const currentMapType = mapTypeSelect ? mapTypeSelect.value : 'temperature';
-            weatherMapImg.src = `https://source.unsplash.com/1200x600/?weather,map,${currentMapType}&t=${Date.now()}`;
+            // Using a reliable weather radar placeholder with cache buster
+            weatherMapImg.src = `https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=600&fit=crop&t=${Date.now()}`;
             showNotification('Map refreshed');
         });
     }

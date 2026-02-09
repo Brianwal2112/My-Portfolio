@@ -60,7 +60,7 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
     });
 }
 
-// Form submission handler with credential saving
+// Form submission handler - Professional version without credential storage
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
@@ -76,62 +76,81 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = emailInput ? emailInput.value.trim() : '';
             const message = messageTextarea ? messageTextarea.value.trim() : '';
 
-            // Save credentials to localStorage
-            if(name && email) {
-                const credentials = {
-                    name: name,
-                    email: email,
-                    timestamp: new Date().toISOString()
-                };
-
-                localStorage.setItem('portfolioCredentials', JSON.stringify(credentials));
-                console.log('Credentials saved:', credentials);
+            // Form validation
+            if (!name || !email || !message) {
+                showFormNotification('Please fill in all required fields.', 'error');
+                return;
             }
 
-            // In a real application, you would handle form submission here
-            alert('Thank you for your message! This is a demo, so no actual submission occurs.\n\nCredentials have been saved to browser storage.');
+            // Create mailto link for form submission
+            const subject = encodeURIComponent('Contact Form Message from ' + name);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            const mailtoLink = `mailto:ochemehenry24@gmail.com?subject=${subject}&body=${body}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+
+            // Show success message
+            showFormNotification('Thank you for your message! Your email client should open with the details.', 'success');
 
             // Reset form
             this.reset();
-
-            // Pre-fill form with saved credentials if available
-            loadSavedCredentials();
         });
     }
 
-    // Load saved credentials when page loads
-    loadSavedCredentials();
-
     // Set active navigation link
     setActiveNavLink();
-    
+
     // Initialize cursor follower if element exists
     initCursorFollower();
-    
+
     // Initialize project card enhancements
     initProjectCardEnhancements();
 });
 
-// Load saved credentials from localStorage if available
-function loadSavedCredentials() {
-    const savedCredentials = localStorage.getItem('portfolioCredentials');
-    if(savedCredentials) {
-        try {
-            const credentials = JSON.parse(savedCredentials);
-            const nameInput = document.querySelector('#name') || document.querySelector('.contact-form input[type="text"]');
-            const emailInput = document.querySelector('#email') || document.querySelector('.contact-form input[type="email"]');
+// Show form notification
+function showFormNotification(message, type = 'success') {
+    // Remove existing notifications
+    const existing = document.querySelector('.form-notification');
+    if (existing) existing.remove();
 
-            if(nameInput && credentials.name) {
-                nameInput.value = credentials.name;
-            }
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `form-notification ${type}`;
+    notification.innerHTML = `
+        <span class="notification-icon">${type === 'success' ? '✓' : '✗'}</span>
+        <span>${message}</span>
+    `;
 
-            if(emailInput && credentials.email) {
-                emailInput.value = credentials.email;
-            }
-        } catch(e) {
-            console.error('Error loading saved credentials:', e);
-        }
-    }
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+        transform: translateX(120%);
+        transition: transform 0.3s ease;
+    `;
+
+    document.body.appendChild(notification);
+
+    // Animate in
+    setTimeout(() => notification.style.transform = 'translateX(0)', 10);
+
+    // Remove after 4 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(120%)';
+        setTimeout(() => notification.remove(), 300);
+    }, 4000);
 }
 
 // Mouse cursor follower functionality
@@ -215,60 +234,59 @@ function createCursorTrail() {
     animateCircles();
 }
 
-// Add humorous mouse-avoiding behavior to buttons on homepage
-function initButtonAvoidance() {
-    // Only apply to homepage buttons
-    if (window.location.pathname.includes('index.html') || window.location.pathname === '' || window.location.pathname.includes('home')) {
-        const buttons = document.querySelectorAll('.btn, .project-link, .project-external-link, .theme-toggle-btn, button');
-        
-        buttons.forEach(button => {
-            button.addEventListener('mouseenter', (e) => {
-                // Calculate random direction to move away
-                const angle = Math.random() * Math.PI * 2; // Random angle in radians
-                const distance = 20 + Math.random() * 30; // Random distance between 20-50px
-                const moveX = Math.cos(angle) * distance;
-                const moveY = Math.sin(angle) * distance;
-                
-                // Apply the transformation
-                button.style.transition = 'transform 0.3s ease';
-                button.style.transform = `translate(${moveX}px, ${moveY}px)`;
-                
-                // Reset position after 7 seconds
-                setTimeout(() => {
-                    button.style.transform = 'translate(0, 0)';
-                }, 7000);
-            });
+// Initialize smooth scroll animations for buttons
+function initButtonAnimations() {
+    const buttons = document.querySelectorAll('.btn, .project-link, .project-external-link');
+
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.style.transform = 'translateY(-3px)';
         });
-    }
+
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translateY(0)';
+        });
+    });
 }
 
-// Enhance project cards with technology tags
+// Enhance project cards with technology tags - safely handles missing elements
 function initProjectCardEnhancements() {
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     projectCards.forEach(card => {
-        // Find the technologies paragraph
-        const techParagraph = card.querySelector('p strong:nth-of-type(2)').closest('p');
-        if (techParagraph) {
-            const technologiesText = techParagraph.textContent.replace('Technologies: ', '');
-            const technologies = technologiesText.split(', ');
-            
+        try {
+            // Find the technologies paragraph safely
+            const techStrong = card.querySelector('p strong');
+            if (!techStrong || !techStrong.textContent.includes('Technologies')) return;
+
+            const techParagraph = techStrong.closest('p');
+            if (!techParagraph) return;
+
+            const technologiesText = techParagraph.textContent.replace('Technologies:', '').trim();
+            if (!technologiesText) return;
+
+            const technologies = technologiesText.split(',').filter(t => t.trim());
+            if (technologies.length === 0) return;
+
             // Create a container for technology tags
             const techContainer = document.createElement('div');
             techContainer.className = 'tech-tags-container';
-            
+
             technologies.forEach(tech => {
                 const tag = document.createElement('span');
                 tag.className = 'tech-tag';
                 tag.textContent = tech.trim();
                 techContainer.appendChild(tag);
             });
-            
+
             // Insert the tech tags after the technologies paragraph
             techParagraph.parentNode.insertBefore(techContainer, techParagraph.nextSibling);
-            
+
             // Hide the original technologies paragraph
             techParagraph.style.display = 'none';
+        } catch (e) {
+            // Silently skip cards that don't match the expected structure
+            console.log('Skipping project card enhancement for one card');
         }
     });
 }
@@ -290,6 +308,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize color transitions
     initColorTransitions();
     
-    // Initialize button avoidance on homepage
-    initButtonAvoidance();
+    // Initialize button animations
+    initButtonAnimations();
 });
