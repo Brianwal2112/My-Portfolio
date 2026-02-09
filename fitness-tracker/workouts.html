@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts - FitnessPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">FitnessPro</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="workouts.html">Workouts</a></li>
+                    <li><a href="nutrition.html">Nutrition</a></li>
+                    <li><a href="progress.html">Progress</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="workouts-section">
+            <div class="container">
+                <h1>Workouts</h1>
+                <div class="workout-controls">
+                    <button id="create-workout" class="btn">Create New Workout</button>
+                    <select id="workout-filter">
+                        <option value="all">All Workouts</option>
+                        <option value="strength">Strength Training</option>
+                        <option value="cardio">Cardio</option>
+                        <option value="flexibility">Flexibility</option>
+                    </select>
+                </div>
+                
+                <div class="workout-plans">
+                    <div class="workout-plan">
+                        <h3>Upper Body Strength</h3>
+                        <p>Focus on chest, shoulders, and arms</p>
+                        <div class="workout-meta">
+                            <span>Duration: 45 mins</span>
+                            <span>Difficulty: Intermediate</span>
+                        </div>
+                        <button class="btn workout-action">Start Session</button>
+                    </div>
+                    <div class="workout-plan">
+                        <h3>Lower Body Blast</h3>
+                        <p>Legs and glutes focused routine</p>
+                        <div class="workout-meta">
+                            <span>Duration: 50 mins</span>
+                            <span>Difficulty: Advanced</span>
+                        </div>
+                        <button class="btn workout-action">Start Session</button>
+                    </div>
+                    <div class="workout-plan">
+                        <h3>HIIT Cardio</h3>
+                        <p>High-intensity interval training</p>
+                        <div class="workout-meta">
+                            <span>Duration: 30 mins</span>
+                            <span>Difficulty: Advanced</span>
+                        </div>
+                        <button class="btn workout-action">Start Session</button>
+                    </div>
+                    <div class="workout-plan">
+                        <h3>Yoga Flow</h3>
+                        <p>Full body flexibility and relaxation</p>
+                        <div class="workout-meta">
+                            <span>Duration: 40 mins</span>
+                            <span>Difficulty: Beginner</span>
+                        </div>
+                        <button class="btn workout-action">Start Session</button>
+                    </div>
+                </div>
+                
+                <div class="workout-history">
+                    <h2>Recent Sessions</h2>
+                    <div class="history-list">
+                        <div class="history-item">
+                            <div class="history-info">
+                                <h4>Upper Body Strength</h4>
+                                <p>Completed: Today, 7:00 AM</p>
+                                <p>Duration: 42 mins</p>
+                            </div>
+                            <div class="history-stats">
+                                <p>Calories: 320</p>
+                                <p>Exercises: 8</p>
+                            </div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-info">
+                                <h4>HIIT Cardio</h4>
+                                <p>Completed: Yesterday, 6:30 PM</p>
+                                <p>Duration: 30 mins</p>
+                            </div>
+                            <div class="history-stats">
+                                <p>Calories: 450</p>
+                                <p>Exercises: 10</p>
+                            </div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-info">
+                                <h4>Yoga Flow</h4>
+                                <p>Completed: June 14, 2026</p>
+                                <p>Duration: 38 mins</p>
+                            </div>
+                            <div class="history-stats">
+                                <p>Calories: 180</p>
+                                <p>Exercises: 12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FitnessPro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post - BlogSpace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">BlogSpace</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="create-post-header">
+            <div class="container">
+                <h1>Create New Post</h1>
+                <p>Share your thoughts with the world</p>
+            </div>
+        </section>
+
+        <section class="create-post-content">
+            <div class="container">
+                <form class="create-post-form">
+                    <div class="form-group">
+                        <label for="post-title">Title</label>
+                        <input type="text" id="post-title" name="title" placeholder="Enter your post title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post-subtitle">Subtitle</label>
+                        <input type="text" id="post-subtitle" name="subtitle" placeholder="A brief subtitle (optional)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post-category">Category</label>
+                        <select id="post-category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="technology">Technology</option>
+                            <option value="design">Design</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="business">Business</option>
+                            <option value="science">Science</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post-tags">Tags (comma separated)</label>
+                        <input type="text" id="post-tags" name="tags" placeholder="web-development, javascript, tutorial">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post-image">Featured Image URL</label>
+                        <input type="text" id="post-image" name="image" placeholder="https://example.com/image.jpg">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post-content">Content</label>
+                        <textarea id="post-content" name="content" rows="20" placeholder="Write your post content here..." required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn draft-btn">Save Draft</button>
+                        <button type="submit" class="btn publish-btn">Publish Post</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 BlogSpace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

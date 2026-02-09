@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations - TableEase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">TableEase</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reservation-header">
+            <div class="container">
+                <h1>Make a Reservation</h1>
+                <p>Book your table in advance to ensure availability</p>
+            </div>
+        </section>
+
+        <section class="reservation-content">
+            <div class="container">
+                <div class="reservation-form-container">
+                    <form class="reservation-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="11:30">11:30 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="12:30">12:30 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="13:30">1:30 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Number of Guests</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2" selected>2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7 Guests</option>
+                                    <option value="8">8 Guests</option>
+                                    <option value="9">9+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="table-type">Table Preference</label>
+                                <select id="table-type" name="table-type">
+                                    <option value="any">Any Available Table</option>
+                                    <option value="window">Window Seat</option>
+                                    <option value="patio">Patio</option>
+                                    <option value="private">Private Booth</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="special-requests">Special Requests</label>
+                            <textarea id="special-requests" name="special-requests" placeholder="Any special requests or dietary restrictions?" rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Reserve Table</button>
+                    </form>
+                    
+                    <div class="availability-calendar">
+                        <h3>Available Times</h3>
+                        <div class="calendar">
+                            <div class="calendar-header">
+                                <button id="prev-week">← Prev Week</button>
+                                <h4 id="current-week">June 15 - June 21, 2026</h4>
+                                <button id="next-week">Next Week →</button>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="calendar-day">
+                                    <div class="day-header">Mon</div>
+                                    <div class="day-date">15</div>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">12:00 PM</div>
+                                        <div class="time-slot available">1:00 PM</div>
+                                        <div class="time-slot unavailable">2:00 PM</div>
+                                        <div class="time-slot available">7:00 PM</div>
+                                        <div class="time-slot available">8:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-header">Tue</div>
+                                    <div class="day-date">16</div>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">11:30 AM</div>
+                                        <div class="time-slot available">12:30 PM</div>
+                                        <div class="time-slot unavailable">1:30 PM</div>
+                                        <div class="time-slot available">6:00 PM</div>
+                                        <div class="time-slot available">7:30 PM</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-header">Wed</div>
+                                    <div class="day-date">17</div>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">12:00 PM</div>
+                                        <div class="time-slot available">1:00 PM</div>
+                                        <div class="time-slot available">2:00 PM</div>
+                                        <div class="time-slot available">7:00 PM</div>
+                                        <div class="time-slot available">8:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-header">Thu</div>
+                                    <div class="day-date">18</div>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">11:00 AM</div>
+                                        <div class="time-slot available">12:00 PM</div>
+                                        <div class="time-slot available">1:00 PM</div>
+                                        <div class="time-slot available">6:30 PM</div>
+                                        <div class="time-slot available">7:30 PM</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-header">Fri</div>
+                                    <div class="day-date">19</div>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">11:30 AM</div>
+                                        <div class="time-slot available">12:30 PM</div>
+                                        <div class="time-slot available">1:30 PM</div>
+                                        <div class="time-slot available">7:00 PM</div>
+                                        <div class="time-slot available">8:30 PM</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-header">Sat</div>
+                                    <div class="day-date">20</div>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">10:00 AM</div>
+                                        <div class="time-slot available">11:00 AM</div>
+                                        <div class="time-slot available">12:00 PM</div>
+                                        <div class="time-slot available">7:00 PM</div>
+                                        <div class="time-slot available">8:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <div class="day-header">Sun</div>
+                                    <div class="day-date">21</div>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">10:00 AM</div>
+                                        <div class="time-slot available">11:00 AM</div>
+                                        <div class="time-slot available">12:00 PM</div>
+                                        <div class="time-slot available">6:00 PM</div>
+                                        <div class="time-slot available">7:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TableEase Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

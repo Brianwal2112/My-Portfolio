@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Maps - WeatherHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">WeatherHub</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="forecast.html">Forecast</a></li>
+                    <li><a href="maps.html">Maps</a></li>
+                    <li><a href="alerts.html">Alerts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="maps-section">
+            <div class="container">
+                <h1>Weather Maps</h1>
+                <div class="map-controls">
+                    <select id="map-type">
+                        <option value="temperature">Temperature</option>
+                        <option value="precipitation">Precipitation</option>
+                        <option value="wind">Wind</option>
+                        <option value="clouds">Clouds</option>
+                    </select>
+                    <button id="refresh-map" class="btn">Refresh Map</button>
+                </div>
+                <div class="map-container">
+                    <img id="weather-map" src="https://source.unsplash.com/1200x600/?weather,map" alt="Weather Map">
+                </div>
+                <div class="map-info">
+                    <h2>Interactive Weather Map</h2>
+                    <p>This map shows real-time weather conditions across the region. Select different map types to view temperature, precipitation, wind patterns, and cloud coverage.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 WeatherHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

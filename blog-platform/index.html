@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSpace - Blogging Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">BlogSpace</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Share Your Story</h1>
+                <p>Create, publish, and share your thoughts with the world</p>
+                <a href="create-post.html" class="btn">Start Writing</a>
+            </div>
+        </section>
+
+        <section class="featured-posts">
+            <div class="container">
+                <h2>Featured Posts</h2>
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://source.unsplash.com/600x400/?technology" alt="Post Image">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Technology</span>
+                                <span class="post-date">June 15, 2026</span>
+                            </div>
+                            <h3 class="post-title">The Future of Web Development</h3>
+                            <p class="post-excerpt">Exploring the latest trends and technologies shaping the future of web development...</p>
+                            <a href="post.html?id=1" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://source.unsplash.com/600x400/?design" alt="Post Image">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Design</span>
+                                <span class="post-date">June 12, 2026</span>
+                            </div>
+                            <h3 class="post-title">Modern UI/UX Principles</h3>
+                            <p class="post-excerpt">Understanding the core principles that make user interfaces intuitive and engaging...</p>
+                            <a href="post.html?id=2" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://source.unsplash.com/600x400/?productivity" alt="Post Image">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Productivity</span>
+                                <span class="post-date">June 10, 2026</span>
+                            </div>
+                            <h3 class="post-title">Boosting Your Coding Efficiency</h3>
+                            <p class="post-excerpt">Practical tips and tools to improve your coding speed and efficiency...</p>
+                            <a href="post.html?id=3" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest posts delivered straight to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BlogSpace</h3>
+                    <p>Sharing ideas, stories, and insights with the world.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>&copy; 2026 BlogSpace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

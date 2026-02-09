@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - BlogSpace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">BlogSpace</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blog-header">
+            <div class="container">
+                <h1>Latest Articles</h1>
+                <p>Discover insightful articles on technology, design, and productivity</p>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="container">
+                <div class="blog-filters">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="technology">Technology</option>
+                        <option value="design">Design</option>
+                        <option value="productivity">Productivity</option>
+                        <option value="lifestyle">Lifestyle</option>
+                    </select>
+                    <select id="sort-posts">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://source.unsplash.com/600x400/?coding" alt="Post Image">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Technology</span>
+                                <span class="post-date">June 15, 2026</span>
+                            </div>
+                            <h3 class="post-title">The Rise of AI in Web Development</h3>
+                            <p class="post-excerpt">Artificial intelligence is revolutionizing how we build and interact with web applications...</p>
+                            <div class="post-stats">
+                                <span>5 min read</span>
+                                <span>128 likes</span>
+                            </div>
+                            <a href="post.html?id=1" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://source.unsplash.com/600x400/?ui" alt="Post Image">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Design</span>
+                                <span class="post-date">June 12, 2026</span>
+                            </div>
+                            <h3 class="post-title">Minimalist Design Principles</h3>
+                            <p class="post-excerpt">Exploring the power of simplicity in modern user interface design...</p>
+                            <div class="post-stats">
+                                <span>4 min read</span>
+                                <span>95 likes</span>
+                            </div>
+                            <a href="post.html?id=2" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://source.unsplash.com/600x400/?workflow" alt="Post Image">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Productivity</span>
+                                <span class="post-date">June 10, 2026</span>
+                            </div>
+                            <h3 class="post-title">Optimizing Your Daily Workflow</h3>
+                            <p class="post-excerpt">Practical strategies to streamline your daily routine and maximize productivity...</p>
+                            <div class="post-stats">
+                                <span>6 min read</span>
+                                <span>210 likes</span>
+                            </div>
+                            <a href="post.html?id=3" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://source.unsplash.com/600x400/?remote-work" alt="Post Image">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Lifestyle</span>
+                                <span class="post-date">June 8, 2026</span>
+                            </div>
+                            <h3 class="post-title">Thriving in a Remote Work Environment</h3>
+                            <p class="post-excerpt">Tips and tricks for maintaining productivity and work-life balance while working remotely...</p>
+                            <div class="post-stats">
+                                <span>7 min read</span>
+                                <span>156 likes</span>
+                            </div>
+                            <a href="post.html?id=4" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://source.unsplash.com/600x400/?javascript" alt="Post Image">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Technology</span>
+                                <span class="post-date">June 5, 2026</span>
+                            </div>
+                            <h3 class="post-title">JavaScript Frameworks Comparison</h3>
+                            <p class="post-excerpt">An in-depth comparison of the most popular JavaScript frameworks in 2026...</p>
+                            <div class="post-stats">
+                                <span>8 min read</span>
+                                <span>320 likes</span>
+                            </div>
+                            <a href="post.html?id=5" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="https://source.unsplash.com/600x400/?health" alt="Post Image">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">Lifestyle</span>
+                                <span class="post-date">June 3, 2026</span>
+                            </div>
+                            <h3 class="post-title">Maintaining Health as a Developer</h3>
+                            <p class="post-excerpt">Essential tips for staying healthy while spending long hours at the computer...</p>
+                            <div class="post-stats">
+                                <span>5 min read</span>
+                                <span>187 likes</span>
+                            </div>
+                            <a href="post.html?id=6" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="page-btn active">1</a>
+                    <a href="#" class="page-btn">2</a>
+                    <a href="#" class="page-btn">3</a>
+                    <a href="#" class="page-btn">Next &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 BlogSpace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - TaskFlow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">TaskFlow</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="tasks.html">Tasks</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="calendar-section">
+            <div class="container">
+                <h1>Task Calendar</h1>
+                <div class="calendar-controls">
+                    <button id="prev-month">&lt; Prev</button>
+                    <h2 id="current-month-year">June 2026</h2>
+                    <button id="next-month">Next &gt;</button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-header">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div id="calendar-days">
+                        <!-- Calendar days will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="upcoming-tasks">
+                    <h2>Upcoming Tasks</h2>
+                    <div id="upcoming-tasks-list">
+                        <!-- Upcoming tasks will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TaskFlow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking System - Project Detail</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Portfolio</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle-btn">
+                            <span class="toggle-icon">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail-section">
+            <div class="container">
+                <div class="project-header">
+                    <h1>Restaurant Booking System</h1>
+                    <div class="project-meta">
+                        <span class="project-role">Backend Development</span>
+                        <span class="project-tech">Angular, Spring Boot, MySQL</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://placehold.co/800x450/1e1e1e/bb86fc?text=Restaurant+Booking" alt="Restaurant Booking System Screenshot">
+                    </div>
+                    
+                    <div class="project-description">
+                        <h2>Project Overview</h2>
+                        <p>An online reservation system with table availability, customer management, and reporting. This system streamlines the booking process for restaurants and enhances the customer dining experience.</p>
+                        
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Real-time table availability tracking</li>
+                            <li>Customer profile and history management</li>
+                            <li>Automated confirmation and reminder system</li>
+                            <li>Reporting and analytics dashboard</li>
+                            <li>Integration with restaurant POS systems</li>
+                            <li>Special occasion and dietary accommodation</li>
+                            <li>Multi-location support</li>
+                        </ul>
+                        
+                        <h3>Challenges & Solutions</h3>
+                        <p>Managing concurrent bookings and preventing double-bookings required implementing sophisticated locking mechanisms. I used database transactions and optimistic locking to ensure data integrity while maintaining system responsiveness.</p>
+                        
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Hibernate</span>
+                            <span class="tech-tag">JWT Authentication</span>
+                            <span class="tech-tag">RESTful APIs</span>
+                            <span class="tech-tag">Apache Kafka</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="restaurant-booking/index.html" target="_blank" class="project-external-link">Visit Live Site</a>
+                    <a href="https://github.com/yourusername/restaurant-booking-project" target="_blank" class="project-github-link">View Source Code</a>
+                </div>
+                
+                <div class="project-navigation">
+                    <a href="blog-platform.html" class="prev-project">&larr; Previous Project: Blog Platform</a>
+                    <a href="projects.html" class="back-to-projects">Back to Projects &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

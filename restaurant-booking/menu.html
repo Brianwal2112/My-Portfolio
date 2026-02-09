@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - TableEase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">TableEase</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="menu-header">
+            <div class="container">
+                <h1>Our Menu</h1>
+                <p>Seasonal ingredients prepared with passion and creativity</p>
+            </div>
+        </section>
+
+        <section class="menu-content">
+            <div class="container">
+                <div class="menu-categories">
+                    <div class="category-nav">
+                        <button class="category-btn active" data-category="appetizers">Appetizers</button>
+                        <button class="category-btn" data-category="mains">Main Courses</button>
+                        <button class="category-btn" data-category="desserts">Desserts</button>
+                        <button class="category-btn" data-category="drinks">Drinks</button>
+                    </div>
+                    
+                    <div class="menu-items">
+                        <div class="menu-category active" id="appetizers">
+                            <h2>Appetizers</h2>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Truffle Arancini</h3>
+                                        <p class="price">$14</p>
+                                    </div>
+                                    <p class="description">Crispy risotto balls with truffle oil and parmesan</p>
+                                    <div class="item-meta">
+                                        <span class="dietary">Vegetarian</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Seared Scallops</h3>
+                                        <p class="price">$18</p>
+                                    </div>
+                                    <p class="description">With cauliflower puree and pancetta crisps</p>
+                                    <div class="item-meta">
+                                        <span class="dietary">Gluten-Free</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Burrata Caprese</h3>
+                                        <p class="price">$16</p>
+                                    </div>
+                                    <p class="description">Fresh burrata with heirloom tomatoes and basil oil</p>
+                                    <div class="item-meta">
+                                        <span class="dietary">Vegetarian</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Duck Confit Sliders</h3>
+                                        <p class="price">$17</p>
+                                    </div>
+                                    <p class="description">Brioche buns with cherry gastrique and arugula</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-category" id="mains">
+                            <h2>Main Courses</h2>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Herb-Crusted Salmon</h3>
+                                        <p class="price">$28</p>
+                                    </div>
+                                    <p class="description">With lemon risotto and seasonal vegetables</p>
+                                    <div class="item-meta">
+                                        <span class="dietary">Gluten-Free</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Wagyu Ribeye</h3>
+                                        <p class="price">$48</p>
+                                    </div>
+                                    <p class="description">12oz cut with roasted bone marrow and truffle fries</p>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Mushroom Risotto</h3>
+                                        <p class="price">$26</p>
+                                    </div>
+                                    <p class="description">Wild mushrooms, parmesan, and fresh herbs</p>
+                                    <div class="item-meta">
+                                        <span class="dietary">Vegetarian</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Atlantic Halibut</h3>
+                                        <p class="price">$34</p>
+                                    </div>
+                                    <p class="description">With brown butter sauce and fennel slaw</p>
+                                    <div class="item-meta">
+                                        <span class="dietary">Gluten-Free</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-category" id="desserts">
+                            <h2>Desserts</h2>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Chocolate Soufflé</h3>
+                                        <p class="price">$12</p>
+                                    </div>
+                                    <p class="description">Warm chocolate soufflé with vanilla bean ice cream</p>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Lemon Tart</h3>
+                                        <p class="price">$10</p>
+                                    </div>
+                                    <p class="description">Tangy lemon curd in a buttery crust with meringue</p>
+                                    <div class="item-meta">
+                                        <span class="dietary">Vegetarian</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Berry Panna Cotta</h3>
+                                        <p class="price">$11</p>
+                                    </div>
+                                    <p class="description">Silky vanilla panna cotta with mixed berry compote</p>
+                                    <div class="item-meta">
+                                        <span class="dietary">Vegetarian</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-category" id="drinks">
+                            <h2>Drinks</h2>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Signature Cocktails</h3>
+                                        <p class="price">$14</p>
+                                    </div>
+                                    <p class="description">Seasonal ingredients and house-made syrups</p>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Wine Selection</h3>
+                                        <p class="price">$12-$18</p>
+                                    </div>
+                                    <p class="description">Curated list featuring international and domestic wines</p>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Craft Beer</h3>
+                                        <p class="price">$8-$10</p>
+                                    </div>
+                                    <p class="description">Rotating selection of local and regional brews</p>
+                                </div>
+                                
+                                <div class="menu-item">
+                                    <div class="item-header">
+                                        <h3>Artisan Coffee</h3>
+                                        <p class="price">$5-$7</p>
+                                    </div>
+                                    <p class="description">Single-origin beans roasted in-house daily</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TableEase Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

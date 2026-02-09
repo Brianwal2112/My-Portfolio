@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherHub - Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">WeatherHub</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="forecast.html">Forecast</a></li>
+                    <li><a href="maps.html">Maps</a></li>
+                    <li><a href="alerts.html">Alerts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <div class="container">
+                <h1>WeatherHub</h1>
+                <p>Your comprehensive weather information center</p>
+                <div class="search-container">
+                    <input type="text" id="city-input" placeholder="Enter city name...">
+                    <button id="search-btn" class="btn">Get Weather</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="current-weather">
+            <div class="container">
+                <div id="weather-display">
+                    <div class="location-info">
+                        <h2 id="location">Select a city to get started</h2>
+                        <p id="date-time">Loading date and time...</p>
+                    </div>
+                    <div class="weather-main">
+                        <div class="temperature">
+                            <span id="temp">--</span>°F
+                        </div>
+                        <div class="weather-icon">
+                            <img id="weather-icon-img" src="" alt="Weather Icon">
+                        </div>
+                        <div class="weather-desc">
+                            <p id="description">--</p>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span>Feels Like</span>
+                            <span id="feels-like">--°F</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Humidity</span>
+                            <span id="humidity">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Wind Speed</span>
+                            <span id="wind-speed">-- mph</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Pressure</span>
+                            <span id="pressure">-- in</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hourly-forecast">
+            <div class="container">
+                <h2>Hourly Forecast</h2>
+                <div id="hourly-forecast-container" class="forecast-container">
+                    <!-- Hourly forecast will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 WeatherHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

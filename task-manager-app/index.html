@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Task Management App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">TaskFlow</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="tasks.html">Tasks</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <div class="container">
+                <h1>TaskFlow Dashboard</h1>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>Total Tasks</h3>
+                        <p id="total-tasks">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Completed</h3>
+                        <p id="completed-tasks">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending</h3>
+                        <p id="pending-tasks">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Overdue</h3>
+                        <p id="overdue-tasks">0</p>
+                    </div>
+                </div>
+
+                <div class="quick-add">
+                    <h2>Add New Task</h2>
+                    <form id="task-form">
+                        <input type="text" id="task-title" placeholder="Task title" required>
+                        <textarea id="task-desc" placeholder="Description"></textarea>
+                        <input type="date" id="task-due-date">
+                        <select id="task-priority">
+                            <option value="low">Low Priority</option>
+                            <option value="medium" selected>Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                        <button type="submit" class="btn">Add Task</button>
+                    </form>
+                </div>
+
+                <div class="recent-tasks">
+                    <h2>Recent Tasks</h2>
+                    <div id="recent-tasks-list">
+                        <!-- Recent tasks will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TaskFlow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

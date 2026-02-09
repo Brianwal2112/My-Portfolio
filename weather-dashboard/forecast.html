@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Day Forecast - WeatherHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">WeatherHub</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="forecast.html">Forecast</a></li>
+                    <li><a href="maps.html">Maps</a></li>
+                    <li><a href="alerts.html">Alerts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="forecast-section">
+            <div class="container">
+                <h1>5-Day Weather Forecast</h1>
+                <div id="forecast-display">
+                    <div class="search-container">
+                        <input type="text" id="city-input" placeholder="Enter city name...">
+                        <button id="search-btn" class="btn">Get Forecast</button>
+                    </div>
+                    <div id="daily-forecast-container" class="daily-forecast-container">
+                        <!-- Daily forecast will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 WeatherHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

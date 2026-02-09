@@ -1,0 +1,1363 @@
+/* Dark Mode Variables */
+:root {
+  --bg-primary: #0a0000;
+  --bg-secondary: #1a0505;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-color: #ff1744; /* Crimson red to match the red/black glow theme */
+  --border-color: #3d1010;
+  --card-bg: #1a0a0a;
+  /* LED-like color transition variables - red and black theme */
+  --led-color1: #1a0000; /* Deep black-red */
+  --led-color2: #2d0000; /* Dark crimson */
+  --led-color3: #3e0000; /* Dark red */
+  --led-color4: #1a0505; /* Black with red tint */
+  --led-color5: #2a0a0a; /* Dark burgundy */
+  --led-color6: #330000; /* Rich dark red */
+  --transition-duration: 5s; /* Duration for each color - now 5 seconds */
+  /* Opposing colors for text - warm tones to match red/black theme */
+  --opposing-color1: #ffebee; /* Light red */
+  --opposing-color2: #ffcdd2; /* Soft red */
+  --opposing-color3: #ef9a9a; /* Light coral */
+  --opposing-color4: #ffccbc; /* Light orange-red */
+  --opposing-color5: #f8bbd0; /* Light pink */
+  --opposing-color6: #e57373; /* Soft crimson */
+}
+
+/* Light Mode Variables */
+.light-mode {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #000000;
+  --text-secondary: #444444;
+  --accent-color: #d50000; /* Red accent for light mode */
+  --border-color: #dddddd;
+  --card-bg: #ffffff;
+  /* LED-like color transition variables for light mode - red theme */
+  --led-color1: #ffebee; /* Very light red */
+  --led-color2: #ffcdd2; /* Light red */
+  --led-color3: #ef9a9a; /* Soft red */
+  --led-color4: #ffe0e0; /* Pale red */
+  --led-color5: #ffcdcd; /* Light coral */
+  --led-color6: #ffc4c4; /* Light salmon */
+  --transition-duration: 5s; /* Duration for each color - now 5 seconds */
+  /* Opposing colors for text - dark reds for light mode */
+  --opposing-color1: #8b0000; /* Dark red */
+  --opposing-color2: #6a0000; /* Deep crimson */
+  --opposing-color3: #4a0000; /* Very dark red */
+  --opposing-color4: #9e0000; /* Crimson */
+  --opposing-color5: #7f0000; /* Dark scarlet */
+  --opposing-color6: #5c0000; /* Deep burgundy */
+}
+
+/* Background LED animation */
+body.color-transition {
+  animation: ledBackground var(--transition-duration) linear infinite;
+}
+
+body.color-transition:not(.light-mode) {
+  background: var(--led-color1);
+}
+
+body.color-transition.light-mode {
+  background: var(--led-color1);
+}
+
+@keyframes ledBackground {
+  0% { background-color: var(--led-color1); }
+  16.66% { background-color: var(--led-color2); }
+  33.33% { background-color: var(--led-color3); }
+  50% { background-color: var(--led-color4); }
+  66.66% { background-color: var(--led-color5); }
+  83.33% { background-color: var(--led-color6); }
+  100% { background-color: var(--led-color1); }
+}
+
+/* Opposing text colors for readability */
+body.color-transition {
+  animation: ledTextColor var(--transition-duration) linear infinite;
+  color: var(--opposing-color1);
+}
+
+@keyframes ledTextColor {
+  0% { color: var(--opposing-color1); }
+  16.66% { color: var(--opposing-color2); }
+  33.33% { color: var(--opposing-color3); }
+  50% { color: var(--opposing-color4); }
+  66.66% { color: var(--opposing-color5); }
+  83.33% { color: var(--opposing-color6); }
+  100% { color: var(--opposing-color1); }
+}
+
+/* Specific element color transitions - removed glowing effect */
+body.color-transition .section h2 {
+  color: var(--opposing-color1);
+}
+
+body.color-transition .project-card h3 {
+  color: var(--opposing-color1);
+}
+
+body.color-transition .nav-menu a {
+  color: var(--opposing-color1);
+}
+
+/* Skills section specific styles */
+.skills-grid {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Skills card styles with multi-color glow */
+.skill-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+  border: 1px solid var(--border-color);
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff0000, #ff1744, #ff5722, #000000);
+  background-size: 400% 400%;
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+  animation: skillGlow 2s ease infinite;
+}
+
+@keyframes skillGlow {
+  0%, 100% {
+    background: linear-gradient(45deg, #ff0000, #000000);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+  }
+  25% {
+    background: linear-gradient(45deg, #ff1744, #880e4f);
+    box-shadow: 0 0 15px rgba(255, 23, 68, 0.5);
+  }
+  50% {
+    background: linear-gradient(45deg, #ff5722, #3e2723);
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.4);
+  }
+  75% {
+    background: linear-gradient(45deg, #e91e63, #1a1a2e);
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.5);
+  }
+}
+
+.skill-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.skill-card p {
+  color: var(--text-secondary);
+}
+
+/* Card backgrounds remain consistent for readability */
+body.color-transition .project-card {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(10px);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Professional header font */
+.nav-logo {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Professional section heading font */
+.section h2 {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+/* Professional hero heading font */
+.hero-section h1 {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+/* Professional project card heading font */
+.project-card h3 {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+/* Multi-color glow effect for project cards - cycling through beautiful color combinations */
+.projects-grid .project-card {
+  position: relative;
+  overflow: visible; /* Allow glow effect to show */
+}
+
+.projects-grid .project-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, #ff0000, #000000);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  z-index: -1;
+}
+
+.projects-grid .project-card:hover::before {
+  opacity: 1;
+  animation: multiColorGlow 3s ease infinite;
+}
+
+/* Enhanced multi-color glow animation with multiple color combinations */
+@keyframes multiColorGlow {
+  0% {
+    background: linear-gradient(135deg, #ff0000, #000000);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+  16.66% {
+    background: linear-gradient(135deg, #ff1744, #880e4f);
+    box-shadow: 0 0 15px rgba(255, 23, 68, 0.5), 0 0 30px rgba(136, 14, 79, 0.4);
+  }
+  33.33% {
+    background: linear-gradient(135deg, #ff5722, #3e2723);
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.5), 0 0 30px rgba(62, 39, 35, 0.4);
+  }
+  50% {
+    background: linear-gradient(135deg, #e91e63, #1a1a2e);
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.5), 0 0 30px rgba(26, 26, 46, 0.4);
+  }
+  66.66% {
+    background: linear-gradient(135deg, #ff6b6b, #2d132c);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.5), 0 0 30px rgba(45, 19, 44, 0.4);
+  }
+  83.33% {
+    background: linear-gradient(135deg, #f44336, #4a0000);
+    box-shadow: 0 0 15px rgba(244, 67, 54, 0.5), 0 0 30px rgba(74, 0, 0, 0.4);
+  }
+  100% {
+    background: linear-gradient(135deg, #ff0000, #000000);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Optional: Different glow colors for each project card */
+.project-card:nth-child(1):hover::before {
+  animation: multiColorGlow 3s ease infinite;
+}
+
+.project-card:nth-child(2):hover::before {
+  animation: goldRedGlow 3s ease infinite;
+}
+
+.project-card:nth-child(3):hover::before {
+  animation: crimsonBlackGlow 3s ease infinite;
+}
+
+.project-card:nth-child(4):hover::before {
+  animation: orangeDarkGlow 3s ease infinite;
+}
+
+.project-card:nth-child(5):hover::before {
+  animation: pinkPurpleGlow 3s ease infinite;
+}
+
+.project-card:nth-child(6):hover::before {
+  animation: fireRedGlow 3s ease infinite;
+}
+
+/* Gold/Red combination */
+@keyframes goldRedGlow {
+  0%, 100% {
+    background: linear-gradient(135deg, #ffd700, #ff0000, #000000);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 0, 0, 0.4);
+  }
+  50% {
+    background: linear-gradient(135deg, #ff8c00, #8b0000, #000000);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.6), 0 0 40px rgba(139, 0, 0, 0.5);
+  }
+}
+
+/* Crimson/Black combination */
+@keyframes crimsonBlackGlow {
+  0%, 100% {
+    background: linear-gradient(135deg, #dc143c, #000000, #1a1a1a);
+    box-shadow: 0 0 15px rgba(220, 20, 60, 0.5), 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    background: linear-gradient(135deg, #8b0000, #2c0000, #000000);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.6), 0 0 40px rgba(44, 0, 0, 0.5);
+  }
+}
+
+/* Orange/Dark combination */
+@keyframes orangeDarkGlow {
+  0%, 100% {
+    background: linear-gradient(135deg, #ff4500, #000000, #1a0f0a);
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    background: linear-gradient(135deg, #ff6347, #2d1a15, #000000);
+    box-shadow: 0 0 20px rgba(255, 99, 71, 0.6), 0 0 40px rgba(45, 26, 21, 0.5);
+  }
+}
+
+/* Pink/Purple combination */
+@keyframes pinkPurpleGlow {
+  0%, 100% {
+    background: linear-gradient(135deg, #ff1493, #4b0082, #000000);
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.5), 0 0 30px rgba(75, 0, 130, 0.4);
+  }
+  50% {
+    background: linear-gradient(135deg, #ff69b4, #800080, #1a001a);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.6), 0 0 40px rgba(128, 0, 128, 0.5);
+  }
+}
+
+/* Fire Red combination */
+@keyframes fireRedGlow {
+  0%, 100% {
+    background: linear-gradient(135deg, #ff4500, #ff0000, #000000);
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.4);
+  }
+  33% {
+    background: linear-gradient(135deg, #ff6347, #dc143c, #1a0000);
+    box-shadow: 0 0 20px rgba(255, 99, 71, 0.7), 0 0 35px rgba(220, 20, 60, 0.5);
+  }
+  66% {
+    background: linear-gradient(135deg, #ff8c00, #8b0000, #000000);
+    box-shadow: 0 0 25px rgba(255, 140, 0, 0.8), 0 0 40px rgba(139, 0, 0, 0.6);
+  }
+}
+
+/* Enhanced glow on hover */
+.projects-grid .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Professional button font */
+.btn {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+
+/* Professional project link font */
+.project-link, .project-external-link {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+body.color-transition {
+  background: linear-gradient(135deg, var(--color1), var(--color2));
+  background-size: 400% 400%;
+  animation: gradientShift var(--transition-duration) ease infinite;
+  color: var(--text-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Apply transition to all elements that use color variables */
+.navbar {
+  transition: background-color var(--transition-duration) ease;
+}
+
+.nav-menu a {
+  transition: color var(--transition-duration) ease;
+}
+
+.theme-toggle-btn {
+  transition: all var(--transition-duration) ease;
+}
+
+.section h2 {
+  transition: color var(--transition-duration) ease;
+}
+
+.project-card {
+  transition: all var(--transition-duration) ease;
+}
+
+.project-card h3 {
+  transition: color var(--transition-duration) ease;
+}
+
+.project-link {
+  transition: all var(--transition-duration) ease;
+}
+
+.project-external-link {
+  transition: all var(--transition-duration) ease;
+}
+
+footer {
+  transition: background-color var(--transition-duration) ease;
+}
+
+/* Professional Cursor Follower Styles */
+.cursor-follower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  background: transparent;
+  opacity: 0.7;
+}
+
+.cursor-follower.hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0.5;
+}
+
+/* Subtle trail effect for cursor */
+.cursor-trail {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.4;
+  transform: translate(-50%, -50%);
+}
+
+/* Enhanced Project Card Styles */
+.project-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 23, 68, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Project Preview iframe container */
+.project-preview {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 23, 68, 0.2);
+  background: linear-gradient(135deg, #1a0000, #000000);
+}
+
+.project-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transform: scale(0.25);
+  transform-origin: top left;
+  width: 400%;
+  height: 400%;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-preview:hover .preview-overlay {
+  opacity: 1;
+}
+
+.preview-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #ff1744, #d50000);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 23, 68, 0.4);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.preview-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5), 0 0 40px rgba(136, 14, 79, 0.4);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--accent-color), #ff6b6b, #ff1744, var(--accent-color));
+  background-size: 400%;
+  z-index: -1;
+  border-radius: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Header & Navigation */
+.navbar {
+  background-color: var(--bg-secondary);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), #ff6b6b);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--accent-color);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-menu a.active {
+  color: var(--accent-color);
+}
+
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--accent-color);
+  transform: rotate(15deg);
+}
+
+/* Main Content */
+.section {
+  padding: 5rem 0;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+/* About Section */
+#about p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  color: var(--text-secondary);
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--text-secondary);
+}
+
+.project-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  margin-top: 1rem;
+}
+
+.project-actions a {
+  flex: 1;
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.project-actions a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.project-actions a:hover::before {
+  left: 100%;
+}
+
+.project-link {
+  background: linear-gradient(135deg, #ff1744, #d50000);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 23, 68, 0.4);
+  transition: all 0.3s ease;
+}
+
+.project-external-link {
+  background: linear-gradient(135deg, #2c0000, #000000);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.project-actions a:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4), 0 0 30px rgba(255, 23, 68, 0.3);
+}
+
+.project-link:hover {
+  background: linear-gradient(135deg, #ff0000, #880e4f);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5), 0 0 40px rgba(136, 14, 79, 0.4);
+}
+
+.project-actions a:active {
+  transform: translateY(-1px);
+}
+
+/* Enhanced project card details */
+.project-details {
+  margin-top: 1rem;
+}
+
+.project-details p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Technology tags */
+.tech-tag {
+  display: inline-block;
+  background-color: rgba(255, 23, 68, 0.15);
+  color: #ff1744;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin: 0.2rem 0.2rem 0.2rem 0;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 23, 68, 0.2);
+}
+
+.tech-tag:hover {
+  background: linear-gradient(135deg, #ff1744, #d50000);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+  border-color: transparent;
+}
+
+/* Contact Section */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #b71c1c;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 6rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #1a0505 0%, #0d0000 50%, #000000 100%);
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: var(--text-secondary);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #ff1744, #d50000);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 23, 68, 0.4);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff0000, #880e4f);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5), 0 0 40px rgba(136, 14, 79, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #ff1744;
+  color: #ff1744;
+}
+
+.btn-outline:hover {
+  background: linear-gradient(135deg, #ff1744, #d50000);
+  border-color: #ff0000;
+  color: white;
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5), 0 0 40px rgba(136, 14, 79, 0.4);
+}
+
+/* Preview Section */
+.preview-section {
+  padding: 5rem 0;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.preview-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.preview-card:hover {
+  transform: translateY(-5px);
+}
+
+.preview-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.preview-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.preview-card a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.preview-card a:hover {
+  transform: translateX(5px);
+}
+
+/* Active nav link */
+.nav-menu a.active {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Project Detail Page Styles */
+.project-detail-section {
+  padding: 3rem 0;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.project-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.project-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.project-role, .project-tech {
+  background-color: var(--card-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.project-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-description h2,
+.project-description h3 {
+  color: var(--accent-color);
+  margin: 1.5rem 0 1rem;
+}
+
+.project-description p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.project-description ul {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.project-description li {
+  margin-bottom: 0.5rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background-color: var(--accent-color);
+  color: var(--bg-primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.project-external-link, .project-github-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.project-external-link:hover, .project-github-link:hover {
+  background-color: #b71c1c;
+}
+
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.project-navigation a {
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.project-navigation a:hover {
+  background-color: var(--bg-secondary);
+}
+
+.prev-project, .next-project {
+  flex: 1;
+}
+
+.back-to-projects {
+  flex: 1;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-secondary);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+footer p {
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* Tablet styles */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile styles */
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 15px;
+  }
+
+  .nav-menu {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-menu a {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 10px;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-preview {
+    height: 180px;
+    margin-bottom: 1rem;
+  }
+
+  .project-preview iframe {
+    transform: scale(0.2);
+    width: 500%;
+    height: 500%;
+  }
+
+  .preview-overlay {
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(26, 0, 0, 0.4), rgba(0, 0, 0, 0.5));
+  }
+
+  .preview-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .project-actions a {
+    padding: 0.7rem;
+  }
+
+  .hero-section {
+    padding: 3rem 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .project-navigation {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small mobile styles */
+  .section {
+    padding: 2rem 0;
+  }
+  
+  .section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .project-card {
+    padding: 1.2rem;
+  }
+
+  .project-preview {
+    height: 150px;
+  }
+
+  .project-preview iframe {
+    transform: scale(0.18);
+    width: 555%;
+    height: 555%;
+  }
+
+  .preview-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+  }
+  
+  .nav-logo {
+    font-size: 1.5rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
+  }
+}
+
+/* Mac-specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* High DPI displays (Retina, etc.) */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .project-card {
+    border-radius: 12px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Styles for touch devices */
+  .project-card {
+    transition: transform 0.2s ease;
+  }
+  
+  .project-card:active {
+    transform: translateY(-5px);
+  }
+  
+  .cursor-follower {
+    display: none; /* Hide cursor follower on touch devices */
+  }
+}

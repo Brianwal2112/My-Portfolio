@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard - Project Detail</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Portfolio</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle-btn">
+                            <span class="toggle-icon">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail-section">
+            <div class="container">
+                <div class="project-header">
+                    <h1>Weather Dashboard</h1>
+                    <div class="project-meta">
+                        <span class="project-role">Frontend Development</span>
+                        <span class="project-tech">JavaScript, Weather API, Geolocation API</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://placehold.co/800x450/1e1e1e/bb86fc?text=Weather+Dashboard" alt="Weather Dashboard Screenshot">
+                    </div>
+                    
+                    <div class="project-description">
+                        <h2>Project Overview</h2>
+                        <p>Real-time weather information with location services, forecasts, and severe weather alerts. This dashboard provides users with comprehensive weather data in an intuitive and visually appealing interface.</p>
+                        
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Current weather conditions with detailed metrics</li>
+                            <li>5-day forecast with hourly breakdowns</li>
+                            <li>Automatic location detection</li>
+                            <li>Manual location search</li>
+                            <li>Severe weather alerts and warnings</li>
+                            <li>Interactive weather maps</li>
+                            <li>Unit conversion (Celsius/Fahrenheit)</li>
+                        </ul>
+                        
+                        <h3>Challenges & Solutions</h3>
+                        <p>Integrating multiple weather APIs to provide accurate and timely information required careful data normalization. I implemented caching strategies to minimize API calls while ensuring data freshness.</p>
+                        
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Weather API</span>
+                            <span class="tech-tag">Geolocation API</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">Webpack</span>
+                            <span class="tech-tag">Babel</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="weather-dashboard/index.html" target="_blank" class="project-external-link">Visit Live Site</a>
+                    <a href="https://github.com/yourusername/weather-dashboard-project" target="_blank" class="project-github-link">View Source Code</a>
+                </div>
+                
+                <div class="project-navigation">
+                    <a href="task-manager.html" class="prev-project">&larr; Previous Project: Task Manager App</a>
+                    <a href="fitness-tracker.html" class="next-project">Next Project: Fitness Tracker &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager App - Project Detail</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Portfolio</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle-btn">
+                            <span class="toggle-icon">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail-section">
+            <div class="container">
+                <div class="project-header">
+                    <h1>Task Manager App</h1>
+                    <div class="project-meta">
+                        <span class="project-role">Full Stack Development</span>
+                        <span class="project-tech">Vue.js, Firebase, Tailwind CSS</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://placehold.co/800x450/1e1e1e/bb86fc?text=Task+Manager+App" alt="Task Manager App Screenshot">
+                    </div>
+                    
+                    <div class="project-description">
+                        <h2>Project Overview</h2>
+                        <p>A productivity application with drag-and-drop functionality, team collaboration, and deadline tracking. This app helps teams stay organized and manage their tasks efficiently.</p>
+                        
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Drag-and-drop task management interface</li>
+                            <li>Team collaboration with shared boards</li>
+                            <li>Deadline tracking and notifications</li>
+                            <li>Progress visualization and analytics</li>
+                            <li>File attachments and comments</li>
+                            <li>Cross-device synchronization</li>
+                            <li>Customizable workflows</li>
+                        </ul>
+                        
+                        <h3>Challenges & Solutions</h3>
+                        <p>Implementing smooth drag-and-drop functionality that worked consistently across different browsers was challenging. I used Vue's ecosystem along with specialized drag-and-drop libraries to create an intuitive and responsive interface.</p>
+                        
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Vuex</span>
+                            <span class="tech-tag">Vue Router</span>
+                            <span class="tech-tag">Dragula</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="task-manager-app/index.html" target="_blank" class="project-external-link">Visit Live Site</a>
+                    <a href="https://github.com/yourusername/task-manager-project" target="_blank" class="project-github-link">View Source Code</a>
+                </div>
+                
+                <div class="project-navigation">
+                    <a href="ecommerce.html" class="prev-project">&larr; Previous Project: E-commerce Website</a>
+                    <a href="weather-dashboard.html" class="next-project">Next Project: Weather Dashboard &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Platform - Project Detail</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">Portfolio</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle-btn">
+                            <span class="toggle-icon">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail-section">
+            <div class="container">
+                <div class="project-header">
+                    <h1>Blog Platform</h1>
+                    <div class="project-meta">
+                        <span class="project-role">Full Stack Development</span>
+                        <span class="project-tech">Next.js, Prisma, PostgreSQL</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://placehold.co/800x450/1e1e1e/bb86fc?text=Blog+Platform" alt="Blog Platform Screenshot">
+                    </div>
+                    
+                    <div class="project-description">
+                        <h2>Project Overview</h2>
+                        <p>A customizable blogging platform with rich text editor, SEO optimization, and social sharing. This platform enables writers to create and publish content with minimal setup and maximum reach.</p>
+                        
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Rich text editor with formatting options</li>
+                            <li>SEO optimization tools</li>
+                            <li>Social media integration and sharing</li>
+                            <li>Commenting and discussion system</li>
+                            <li>Analytics dashboard for authors</li>
+                            <li>Customizable themes and layouts</li>
+                            <li>Multimedia upload capabilities</li>
+                        </ul>
+                        
+                        <h3>Challenges & Solutions</h3>
+                        <p>Implementing a rich text editor that produces clean, semantic HTML while maintaining formatting across different browsers was complex. I leveraged a combination of modern contentEditable APIs and custom parsing to ensure consistent output.</p>
+                        
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Prisma</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">MDX</span>
+                            <span class="tech-tag">NextAuth.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="blog-platform/index.html" target="_blank" class="project-external-link">Visit Live Site</a>
+                    <a href="https://github.com/yourusername/blog-platform-project" target="_blank" class="project-github-link">View Source Code</a>
+                </div>
+                
+                <div class="project-navigation">
+                    <a href="fitness-tracker.html" class="prev-project">&larr; Previous Project: Fitness Tracker</a>
+                    <a href="restaurant-booking.html" class="next-project">Next Project: Restaurant Booking System &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress - FitnessPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">FitnessPro</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="workouts.html">Workouts</a></li>
+                    <li><a href="nutrition.html">Nutrition</a></li>
+                    <li><a href="progress.html">Progress</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="progress-section">
+            <div class="container">
+                <h1>Progress Tracking</h1>
+                <div class="progress-controls">
+                    <select id="time-range">
+                        <option value="week">Last 7 Days</option>
+                        <option value="month">Last 30 Days</option>
+                        <option value="quarter">Last 90 Days</option>
+                        <option value="year">Last Year</option>
+                    </select>
+                </div>
+                
+                <div class="progress-charts">
+                    <div class="chart-container">
+                        <h3>Weight Progress</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="weight-chart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Workout Frequency</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="workout-chart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Calories Burned</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="calories-chart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="milestones">
+                    <h2>Achievements</h2>
+                    <div class="milestone-grid">
+                        <div class="milestone-card">
+                            <div class="milestone-icon">🏃‍♂️</div>
+                            <h3>100 Miles</h3>
+                            <p>Distance Run</p>
+                            <p class="milestone-date">Achieved: May 15, 2026</p>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-icon">💪</div>
+                            <h3>50 Workouts</h3>
+                            <p>Completed Sessions</p>
+                            <p class="milestone-date">Achieved: June 1, 2026</p>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-icon">⚖️</div>
+                            <h3>15 lbs</h3>
+                            <p>Weight Lost</p>
+                            <p class="milestone-date">Achieved: April 22, 2026</p>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-icon">🥗</div>
+                            <h3>30 Days</h3>
+                            <p>Healthy Eating Streak</p>
+                            <p class="milestone-date">Achieved: June 10, 2026</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="goals">
+                    <h2>Goals</h2>
+                    <div class="goal-list">
+                        <div class="goal-item">
+                            <div class="goal-info">
+                                <h3>Lose 10 lbs</h3>
+                                <p>Target weight: 160 lbs</p>
+                                <p>Current: 172 lbs</p>
+                            </div>
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <p>60% Complete</p>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-info">
+                                <h3>Run a Marathon</h3>
+                                <p>Training for Boston Marathon</p>
+                                <p>Current longest run: 15 miles</p>
+                            </div>
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%"></div>
+                                </div>
+                                <p>45% Complete</p>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-info">
+                                <h3>Deadlift 300 lbs</h3>
+                                <p>Current PR: 255 lbs</p>
+                                <p>Target: 300 lbs</p>
+                            </div>
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                                <p>85% Complete</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FitnessPro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

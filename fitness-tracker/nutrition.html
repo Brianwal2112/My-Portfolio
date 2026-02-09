@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition - FitnessPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">FitnessPro</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="workouts.html">Workouts</a></li>
+                    <li><a href="nutrition.html">Nutrition</a></li>
+                    <li><a href="progress.html">Progress</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="nutrition-section">
+            <div class="container">
+                <h1>Nutrition Tracking</h1>
+                <div class="nutrition-controls">
+                    <button id="log-meal-btn" class="btn">Log Meal</button>
+                    <select id="date-selector">
+                        <option value="today">Today</option>
+                        <option value="yesterday">Yesterday</option>
+                        <option value="custom">Custom Date</option>
+                    </select>
+                </div>
+                
+                <div class="daily-nutrition">
+                    <div class="nutrition-goal">
+                        <h3>Calories Goal: 2,200</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <p>Consumed: 1,650 / 2,200 calories</p>
+                    </div>
+                    
+                    <div class="nutrition-breakdown">
+                        <div class="macro">
+                            <h4>Carbs</h4>
+                            <p>210g / 275g</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 76%"></div>
+                            </div>
+                        </div>
+                        <div class="macro">
+                            <h4>Protein</h4>
+                            <p>135g / 165g</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="macro">
+                            <h4>Fat</h4>
+                            <p>65g / 75g</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 87%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="meal-log">
+                    <h2>Today's Meals</h2>
+                    <div class="meal-entry">
+                        <h3>Breakfast</h3>
+                        <div class="food-item">
+                            <span>Oatmeal with berries</span>
+                            <span>320 cal</span>
+                        </div>
+                        <div class="food-item">
+                            <span>Black coffee</span>
+                            <span>5 cal</span>
+                        </div>
+                    </div>
+                    <div class="meal-entry">
+                        <h3>Lunch</h3>
+                        <div class="food-item">
+                            <span>Grilled chicken salad</span>
+                            <span>450 cal</span>
+                        </div>
+                        <div class="food-item">
+                            <span>Vinaigrette dressing</span>
+                            <span>180 cal</span>
+                        </div>
+                    </div>
+                    <div class="meal-entry">
+                        <h3>Dinner</h3>
+                        <div class="food-item">
+                            <span>Salmon with quinoa</span>
+                            <span>520 cal</span>
+                        </div>
+                        <div class="food-item">
+                            <span>Steamed broccoli</span>
+                            <span>55 cal</span>
+                        </div>
+                    </div>
+                    <div class="meal-entry">
+                        <h3>Snacks</h3>
+                        <div class="food-item">
+                            <span>Protein shake</span>
+                            <span>180 cal</span>
+                        </div>
+                        <div class="food-item">
+                            <span>Mixed nuts</span>
+                            <span>160 cal</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nutrition-tips">
+                    <h2>Nutrition Tips</h2>
+                    <ul>
+                        <li>Stay hydrated throughout the day</li>
+                        <li>Include protein in every meal</li>
+                        <li>Choose whole grains over refined carbs</li>
+                        <li>Eat colorful fruits and vegetables</li>
+                        <li>Control portion sizes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FitnessPro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

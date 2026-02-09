@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitnessPro - Fitness Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">FitnessPro</h1>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="workouts.html">Workouts</a></li>
+                    <li><a href="nutrition.html">Nutrition</a></li>
+                    <li><a href="progress.html">Progress</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <div class="container">
+                <h1>FitnessPro Dashboard</h1>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Daily Steps</h3>
+                        <p id="daily-steps">8,421</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 84%"></div>
+                        </div>
+                        <p class="goal">Goal: 10,000</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Calories Burned</h3>
+                        <p id="calories-burned">425</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <p class="goal">Goal: 650</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Minutes</h3>
+                        <p id="active-minutes">45</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <p class="goal">Goal: 60</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Water Intake</h3>
+                        <p id="water-intake">6</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                        <p class="goal">Goal: 8 glasses</p>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="actions-grid">
+                        <button class="action-btn" id="start-workout">
+                            <span class="icon">💪</span>
+                            <span>Start Workout</span>
+                        </button>
+                        <button class="action-btn" id="log-meal">
+                            <span class="icon">🥗</span>
+                            <span>Log Meal</span>
+                        </button>
+                        <button class="action-btn" id="record-weight">
+                            <span class="icon">⚖️</span>
+                            <span>Record Weight</span>
+                        </button>
+                        <button class="action-btn" id="log-water">
+                            <span class="icon">💧</span>
+                            <span>Log Water</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div id="activity-feed">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏃‍♂️</span>
+                            <div class="activity-content">
+                                <p>Completed 30-minute run</p>
+                                <p class="activity-time">Today, 7:30 AM</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥗</span>
+                            <div class="activity-content">
+                                <p>Logged breakfast: Oatmeal with berries</p>
+                                <p class="activity-time">Today, 8:15 AM</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">💪</span>
+                            <div class="activity-content">
+                                <p>Finished strength training session</p>
+                                <p class="activity-time">Yesterday, 6:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏋️</span>
+                            <div class="activity-content">
+                                <p>Completed 15 reps of bench press (185 lbs)</p>
+                                <p class="activity-time">Yesterday, 6:30 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FitnessPro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
