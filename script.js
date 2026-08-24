@@ -26,6 +26,43 @@ function toggleTheme() {
 // Add event listener to the theme toggle button
 document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
+// Mobile menu toggle functionality
+function initMobileMenu() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            
+            // Toggle hamburger icon
+            const span = this.querySelector('span');
+            if (navMenu.classList.contains('active')) {
+                span.textContent = '✕';
+            } else {
+                span.textContent = '☰';
+            }
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.querySelector('span').textContent = '☰';
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!navMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.querySelector('span').textContent = '☰';
+            }
+        });
+    }
+}
+
 // Set active navigation link based on current page
 function setActiveNavLink() {
     const currentPage = window.location.pathname.split('/').pop();
@@ -310,4 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize button animations
     initButtonAnimations();
+    
+    // Initialize mobile menu
+    initMobileMenu();
 });
