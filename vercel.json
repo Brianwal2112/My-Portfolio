@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "dark-mode-portfolio",
-  "public": true,
+
   "github": {
     "enabled": true,
     "autoAlias": true
