@@ -3,152 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Henry | Full-Stack Developer & Web3 Specialist</title>
+    <title>Contact - HENRY.</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="nav-logo">Henry.Dev</h1>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                    <li>
-                        <button id="theme-toggle" class="theme-toggle-btn">
-                            <span class="toggle-icon">🌙</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <nav class="minimal-nav">
+        <a href="index.html" class="logo">HENRY<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Work</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
 
     <main>
-        <section class="section hero-section">
+        <section class="hero">
             <div class="container">
-                <div class="contact-hero">
-                    <h2>Let's Work Together</h2>
-                    <p class="lead">Have a project in mind or want to discuss opportunities? I'm always open to new collaborations and challenges.</p>
-                </div>
+                <h1 class="reveal">Let's <br><em>Connect</em></h1>
             </div>
         </section>
 
-        <section class="section">
+        <section class="editorial-section">
             <div class="container">
-                <div class="contact-wrapper">
-                    <div class="contact-info-card">
-                        <h3>Get In Touch</h3>
-                        <p class="contact-intro">I'm currently available for freelance projects, full-time positions, and consulting opportunities. Whether you need a full-stack application, Web3 infrastructure, AI automation, or community management, let's discuss how I can help bring your vision to life.</p>
-
-                        <div class="contact-methods">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h4>Email</h4>
-                                    <a href="mailto:ochemehenry24@gmail.com">ochemehenry24@gmail.com</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h4>Phone</h4>
-                                    <a href="tel:+2347052625815">+234 705 262 5815</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h4>Location</h4>
-                                    <p>Enugu, Nigeria</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="social-links-section">
-                            <h4>Connect With Me</h4>
-                            <div class="social-icons">
-                                <a href="https://github.com/Brianwal2112" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-btn github">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                                <a href="https://x.com/Ven2116_V" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="social-btn twitter">
-                                    <i class="fab fa-x-twitter"></i>
-                                    <span>X (Twitter)</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="availability-status">
-                            <span class="status-indicator available"></span>
-                            <p>Available for new projects</p>
+                <div class="editorial-grid">
+                    <div class="editorial-item reveal">
+                        <span class="label">Contact</span>
+                        <h2 style="font-size: 3rem;">Open for <br>collaborations.</h2>
+                        <p>Whether you have a project in mind or just want to say hello, my inbox is always open.</p>
+                        <a href="mailto:ochemehenry24@gmail.com" class="editorial-link">Send an Email &rarr;</a>
+                    </div>
+                    <div class="editorial-item reveal">
+                        <span class="label">Socials</span>
+                        <div class="social-links">
+                            <a href="#" class="editorial-link">LinkedIn</a><br>
+                            <a href="#" class="editorial-link">GitHub</a><br>
+                            <a href="#" class="editorial-link">Twitter</a>
                         </div>
                     </div>
-
-                    <form class="contact-form-card" id="contact-form">
-                        <h3>Send a Message</h3>
-                        <p class="form-subtitle">Fill out the form below and I'll get back to you as soon as possible.</p>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a topic</option>
-                                <option value="project">Project Inquiry</option>
-                                <option value="job">Job Opportunity</option>
-                                <option value="consulting">Consulting</option>
-                                <option value="collaboration">Collaboration</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your project, goals, and timeline..." rows="5" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
-
-                        <p class="form-note">* Required fields</p>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="section alt-bg">
-            <div class="container">
-                <div class="cta-section">
-                    <h3>Prefer a Direct Call?</h3>
-                    <p>Sometimes a quick conversation is more efficient. Feel free to call or WhatsApp me during business hours (9 AM - 6 PM WAT).</p>
-                    <a href="tel:+2347052625815" class="btn btn-primary">
-                        <i class="fas fa-phone"></i>
-                        Call Now
-                    </a>
                 </div>
             </div>
         </section>
@@ -156,44 +50,21 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>Henry.Dev</h3>
-                    <p>Building the future, one line of code at a time.</p>
+                    <h2>HENRY.</h2>
+                    <p>Engineering the future.</p>
                 </div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
+                <div class="footer-nav">
                     <a href="about.html">About</a>
-                    <a href="projects.html">Projects</a>
+                    <a href="projects.html">Work</a>
                     <a href="contact.html">Contact</a>
                 </div>
             </div>
-            <p class="copyright">&copy; 2026 Henry. All rights reserved.</p>
+            <p class="copyright">&copy; 2026 Henry. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Contact form handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            // Create mailto link with form data
-            const mailtoLink = `mailto:ochemehenry24@gmail.com?subject=${encodeURIComponent(subject + ' - Message from ' + name)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message)}`;
-
-            window.location.href = mailtoLink;
-
-            // Show success message
-            alert('Thank you for your message! Your email client should open with the message ready to send.');
-
-            // Reset form
-            this.reset();
-        });
-    </script>
 </body>
 </html>

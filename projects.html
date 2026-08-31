@@ -3,144 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Henry | Full-Stack Developer</title>
+    <title>Selected Work - HENRY.</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Mouse follower element -->
-    <div class="cursor-follower"></div>
-    
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="nav-logo">Henry.Dev</h1>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li>
-                        <button id="theme-toggle" class="theme-toggle-btn">
-                            <span class="toggle-icon">🌙</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <nav class="minimal-nav">
+        <a href="index.html" class="logo">HENRY<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <main>
-        <section class="section">
+        <section class="work-header">
             <div class="container">
-                <h2>My Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-preview">
-                            <iframe src="e-commerce-site/index.html" title="E-commerce Website Preview" loading="lazy"></iframe>
-                            <div class="preview-overlay">
-                                <a href="e-commerce-site/index.html" target="_blank" class="preview-btn">View Live</a>
-                            </div>
-                        </div>
-                        <h3>E-commerce Website</h3>
-                        <p>A fully responsive online store with payment integration, user accounts, and inventory management.</p>
-                        <div class="project-details">
-                            <p><strong>Technologies:</strong> React, Node.js, MongoDB, Stripe API</p>
-                            <p><strong>Role:</strong> Frontend & Backend Development</p>
-                            <div class="project-actions">
-                                <a href="ecommerce.html" class="project-link">View Details</a>
-                                <a href="e-commerce-site/index.html" target="_blank" class="project-external-link">Live Site</a>
-                            </div>
+                <h1 class="reveal">Selected <br><em>Case Studies</em></h1>
+                <p class="reveal-delayed">A curation of technical challenges solved through design and engineering.</p>
+            </div>
+        </section>
+
+        <section class="work-list">
+            <div class="container">
+                <div class="work-item reveal">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="E-commerce Site">
+                    </div>
+                    <div class="work-info">
+                        <span class="label">01 / Full-Stack</span>
+                        <h2>Commerce Engine</h2>
+                        <p>A high-performance e-commerce architecture focusing on conversion and speed.</p>
+                        <div class="work-meta">
+                            <span>React, Node.js, Stripe</span>
+                            <a href="ecommerce.html" class="work-link">View Case Study &rarr;</a>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-preview">
-                            <iframe src="task-manager-app/index.html" title="Task Manager App Preview" loading="lazy"></iframe>
-                            <div class="preview-overlay">
-                                <a href="task-manager-app/index.html" target="_blank" class="preview-btn">View Live</a>
-                            </div>
-                        </div>
-                        <h3>Task Manager App</h3>
-                        <p>A productivity application with drag-and-drop functionality, team collaboration, and deadline tracking.</p>
-                        <div class="project-details">
-                            <p><strong>Technologies:</strong> Vue.js, Firebase, Tailwind CSS</p>
-                            <p><strong>Role:</strong> Full Stack Development</p>
-                            <div class="project-actions">
-                                <a href="task-manager.html" class="project-link">View Details</a>
-                                <a href="task-manager-app/index.html" target="_blank" class="project-external-link">Live Site</a>
-                            </div>
+                </div>
+
+                <div class="work-item reveal" style="direction: rtl; text-align: left;">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80" alt="Task Manager">
+                    </div>
+                    <div class="work-info" style="direction: ltr;">
+                        <span class="label">02 / Productivity</span>
+                        <h2>Flow Manager</h2>
+                        <p>Reimagining task management for high-output creative teams.</p>
+                        <div class="work-meta">
+                            <span>Vue.js, Firebase</span>
+                            <a href="task-manager.html" class="work-link">View Case Study &rarr;</a>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-preview">
-                            <iframe src="weather-dashboard/index.html" title="Weather Dashboard Preview" loading="lazy"></iframe>
-                            <div class="preview-overlay">
-                                <a href="weather-dashboard/index.html" target="_blank" class="preview-btn">View Live</a>
-                            </div>
-                        </div>
-                        <h3>Weather Dashboard</h3>
-                        <p>Real-time weather information with location services, forecasts, and severe weather alerts.</p>
-                        <div class="project-details">
-                            <p><strong>Technologies:</strong> JavaScript, Weather API, Geolocation API</p>
-                            <p><strong>Role:</strong> Frontend Development</p>
-                            <div class="project-actions">
-                                <a href="weather-dashboard.html" class="project-link">View Details</a>
-                                <a href="weather-dashboard/index.html" target="_blank" class="project-external-link">Live Site</a>
-                            </div>
+                </div>
+
+                <div class="work-item reveal">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=1200&q=80" alt="Weather App">
+                    </div>
+                    <div class="work-info">
+                        <span class="label">03 / API Integration</span>
+                        <h2>Atmosphere</h2>
+                        <p>Real-time meteorological data visualization with predictive alerts.</p>
+                        <div class="work-meta">
+                            <span>JavaScript, WeatherAPI</span>
+                            <a href="weather-dashboard.html" class="work-link">View Case Study &rarr;</a>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-preview">
-                            <iframe src="fitness-tracker/index.html" title="Fitness Tracker Preview" loading="lazy"></iframe>
-                            <div class="preview-overlay">
-                                <a href="fitness-tracker/index.html" target="_blank" class="preview-btn">View Live</a>
-                            </div>
-                        </div>
-                        <h3>Fitness Tracker</h3>
-                        <p>A comprehensive fitness application with workout plans, progress tracking, and nutrition logging.</p>
-                        <div class="project-details">
-                            <p><strong>Technologies:</strong> React Native, Redux, GraphQL</p>
-                            <p><strong>Role:</strong> Mobile App Development</p>
-                            <div class="project-actions">
-                                <a href="fitness-tracker.html" class="project-link">View Details</a>
-                                <a href="fitness-tracker/index.html" target="_blank" class="project-external-link">Live Site</a>
-                            </div>
-                        </div>
+                </div>
+
+                <div class="work-item reveal" style="direction: rtl; text-align: left;">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1517836357463-f281a66115b5?auto=format&fit=crop&w=1200&q=80" alt="Fitness Tracker">
                     </div>
-                    <div class="project-card">
-                        <div class="project-preview">
-                            <iframe src="blog-platform/index.html" title="Blog Platform Preview" loading="lazy"></iframe>
-                            <div class="preview-overlay">
-                                <a href="blog-platform/index.html" target="_blank" class="preview-btn">View Live</a>
-                            </div>
-                        </div>
-                        <h3>Blog Platform</h3>
-                        <p>A customizable blogging platform with rich text editor, SEO optimization, and social sharing.</p>
-                        <div class="project-details">
-                            <p><strong>Technologies:</strong> Next.js, Prisma, PostgreSQL</p>
-                            <p><strong>Role:</strong> Full Stack Development</p>
-                            <div class="project-actions">
-                                <a href="blog-platform.html" class="project-link">View Details</a>
-                                <a href="blog-platform/index.html" target="_blank" class="project-external-link">Live Site</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-preview">
-                            <iframe src="restaurant-booking/index.html" title="Restaurant Booking Preview" loading="lazy"></iframe>
-                            <div class="preview-overlay">
-                                <a href="restaurant-booking/index.html" target="_blank" class="preview-btn">View Live</a>
-                            </div>
-                        </div>
-                        <h3>Restaurant Booking System</h3>
-                        <p>An online reservation system with table availability, customer management, and reporting.</p>
-                        <div class="project-details">
-                            <p><strong>Technologies:</strong> Angular, Spring Boot, MySQL</p>
-                            <p><strong>Role:</strong> Backend Development</p>
-                            <div class="project-actions">
-                                <a href="restaurant-booking.html" class="project-link">View Details</a>
-                                <a href="restaurant-booking/index.html" target="_blank" class="project-external-link">Live Site</a>
-                            </div>
+                    <div class="work-info" style="direction: ltr;">
+                        <span class="label">04 / Mobile</span>
+                        <h2>Vitality</h2>
+                        <p>A health-tracking ecosystem prioritizing biometric data accuracy.</p>
+                        <div class="work-meta">
+                            <span>React Native, GraphQL</span>
+                            <a href="fitness-tracker.html" class="work-link">View Case Study &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -150,19 +94,18 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>Henry.Dev</h3>
-                    <p>Building the future, one line of code at a time.</p>
+                    <h2>HENRY.</h2>
+                    <p>Engineering the future.</p>
                 </div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
+                <div class="footer-nav">
                     <a href="about.html">About</a>
-                    <a href="projects.html">Projects</a>
+                    <a href="projects.html">Work</a>
                     <a href="contact.html">Contact</a>
                 </div>
             </div>
-            <p class="copyright">&copy; 2026 Henry. All rights reserved.</p>
+            <p class="copyright">&copy; 2026 Henry. All Rights Reserved.</p>
         </div>
     </footer>
 
