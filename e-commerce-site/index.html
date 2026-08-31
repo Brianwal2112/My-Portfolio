@@ -3,59 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEasy - Online Store</title>
+    <title>LUXE | Minimalist Boutique</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="logo">ShopEasy</h1>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </div>
-        </nav>
+    <nav class="navbar">
+        <div class="logo">LUXE</div>
+        <ul class="nav-links">
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <div class="cart-icon">Cart (0)</div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Essence of <br>Simplicity</h1>
+            <p>Curated essentials for the modern individual.</p>
+            <a href="#shop" class="cta">Shop Collection</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6b//auto=format&fit=crop&w=1000&q=80" alt="Luxury Product">
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Welcome to ShopEasy</h1>
-                <p>Your one-stop destination for all your shopping needs</p>
-                <a href="products.html" class="btn">Shop Now</a>
-            </div>
-        </section>
-
-        <section class="featured-products">
-            <div class="container">
-                <h2>Featured Products</h2>
-                <div class="products-grid" id="featured-products">
-                    <!-- Featured products will be loaded here -->
+    <section id="shop" class="products">
+        <div class="container">
+            <h2 class="section-title">Featured Pieces</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e56471e238a?auto=format&fit=crop&w=500&q=80" alt="Product 1">
+                    <h3>Minimalist Watch</h3>
+                    <p>$199.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6b?auto=format&fit=crop&w=500&q=80" alt="Product 2">
+                    <h3>Leather Tote</h3>
+                    <p>$250.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1584917865442-8a72f077754d?auto=format&fit=crop&w=500&q=80" alt="Product 3">
+                    <h3>Studio Lamp</h3>
+                    <p>$89.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=500&q=80" alt="Product 4">
+                    <h3>Analog Camera</h3>
+                    <p>$450.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 ShopEasy. All rights reserved.</p>
-        </div>
+        <p>&copy; 2026 LUXE Boutique. All rights reserved.</p>
     </footer>
-
-    <!-- Product Detail Modal -->
-    <div id="product-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeProductModal()">&times;</span>
-            <div id="modal-product-details">
-                <!-- Product details will be loaded here -->
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

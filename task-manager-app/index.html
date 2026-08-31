@@ -3,78 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskFlow - Task Management App</title>
+    <title>FLOW | Productivity Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="logo">TaskFlow</h1>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="tasks.html">Tasks</a></li>
-                    <li><a href="calendar.html">Calendar</a></li>
-                    <li><a href="team.html">Team</a></li>
-                </ul>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">FLOW</div>
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">My Tasks</a>
+                <a href="#">Team</a>
+                <a href="#">Calendar</a>
+                <a href="#">Settings</a>
+            </nav>
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/40" alt="User">
+                <span>Henry Dev</span>
             </div>
-        </nav>
-    </header>
+        </aside>
 
-    <main>
-        <section class="dashboard">
-            <div class="container">
-                <h1>TaskFlow Dashboard</h1>
-                <div class="stats">
-                    <div class="stat-card">
-                        <h3>Total Tasks</h3>
-                        <p id="total-tasks">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Completed</h3>
-                        <p id="completed-tasks">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Pending</h3>
-                        <p id="pending-tasks">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Overdue</h3>
-                        <p id="overdue-tasks">0</p>
-                    </div>
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Welcome back, Henry</h1>
+                <button class="btn-primary">+ New Task</button>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Completed</span>
+                    <span class="stat-value">24</span>
                 </div>
-
-                <div class="quick-add">
-                    <h2>Add New Task</h2>
-                    <form id="task-form">
-                        <input type="text" id="task-title" placeholder="Task title" required>
-                        <textarea id="task-desc" placeholder="Description"></textarea>
-                        <input type="date" id="task-due-date">
-                        <select id="task-priority">
-                            <option value="low">Low Priority</option>
-                            <option value="medium" selected>Medium Priority</option>
-                            <option value="high">High Priority</option>
-                        </select>
-                        <button type="submit" class="btn">Add Task</button>
-                    </form>
+                <div class="stat-card">
+                    <span class="stat-label">In Progress</span>
+                    <span class="stat-value">12</span>
                 </div>
-
-                <div class="recent-tasks">
-                    <h2>Recent Tasks</h2>
-                    <div id="recent-tasks-list">
-                        <!-- Recent tasks will be loaded here -->
-                    </div>
+                <div class="stat-card">
+                    <span class="stat-label">Pending</span>
+                    <span class="stat-value">5</span>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 TaskFlow. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+            <div class="task-section">
+                <h2>Active Projects</h2>
+                <div class="task-list">
+                    <div class="task-item">
+                        <div class="task-info">
+                            <span class="priority high">High</span>
+                            <strong>Portfolio Redesign</strong>
+                            <p>Complete Awwwards style implementation</p>
+                        </div>
+                        <div class="task-status">In Progress</div>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-info">
+                            <span class="priority medium">Medium</span>
+                            <strong>API Integration</strong>
+                            <p>Connect Weather API to Dashboard</p>
+                        </div>
+                        <div class="task-status">Pending</div>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-info">
+                            <span class="priority low">Low</span>
+                            <strong>Documentation</strong>
+                            <p>Write technical specs for Web3 project</p>
+                        </div>
+                        <div class="task-status">Completed</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
