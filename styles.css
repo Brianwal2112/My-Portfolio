@@ -555,3 +555,140 @@ body.dark-mode {
   display: inline-block;
   transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
+/* --- PRELOADER --- */
+.preloader {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--text-color);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.loader-content {
+  text-align: center;
+  color: var(--bg-color);
+}
+
+.loader-percent {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 2px;
+  background: rgba(255,255,255,0.2);
+  margin: 0 auto;
+  position: relative;
+}
+
+.progress {
+  position: absolute;
+  top: 0; left: 0; height: 100%;
+  background: white;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+body.loading .preloader {
+  opacity: 1;
+  visibility: visible;
+}
+
+body:not(.loading) .preloader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* --- SVG BLOBS --- */
+.bg-visuals {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 174, 239, 0.05);
+  filter: blur(80px);
+  border-radius: 50%;
+  transition: transform 0.5s ease-out;
+}
+
+.blob-1 { top: -10%; left: -10%; background: rgba(0, 51, 102, 0.05); }
+.blob-2 { bottom: -10%; right: -10%; background: rgba(0, 174, 239, 0.05); }
+.blob-3 { top: 40%; left: 30%; background: rgba(150, 150, 150, 0.03); }
+
+/* --- HORIZONTAL REEL --- */
+.horizontal-reel {
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+.reel-header {
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.reel-header h2 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.reel-container {
+  overflow-x: auto;
+  padding: 0 2rem 4rem;
+  scrollbar-width: none;
+}
+
+.reel-container::-webkit-scrollbar { display: none; }
+
+.reel-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+}
+
+.reel-item {
+  width: 400px;
+  cursor: pointer;
+  transition: transform 0.4s var(--transition-smooth);
+}
+
+.reel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.reel-item:hover img {
+  filter: grayscale(0%);
+}
+
+.reel-info {
+  margin-top: 1.5rem;
+}
+
+.reel-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.reel-info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}

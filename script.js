@@ -1,46 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- PRELOADER LOGIC ---
+    const body = document.body;
+    const percentText = document.querySelector('.loader-percent');
+    const progressBar = document.querySelector('.progress');
+    
+    let count = 0;
+    const loadInterval = setInterval(() => {
+        count += Math.floor(Math.random() * 10) + 1;
+        if (count >= 100) {
+            count = 100;
+            clearInterval(loadInterval);
+            setTimeout(() => {
+                body.classList.remove('loading');
+            }, 500);
+        }
+        percentText.textContent = count + '%';
+        progressBar.style.width = count + '%';
+    }, 80);
+
     // --- CURSOR LOGIC ---
     const cursor = document.querySelector('.cursor');
     const follower = document.querySelector('.cursor-follower');
-    
-    let mouseX = 0, mouseY = 0;
-    let followerX = 0, followerY = 0;
+    let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        
-        // Core cursor position
         cursor.style.left = mouseX + 'px';
         cursor.style.top = mouseY + 'px';
     });
 
-    // Smooth follower animation
     function animateCursor() {
         followerX += (mouseX - followerX) * 0.1;
         followerY += (mouseY - followerY) * 0.1;
-        
         follower.style.left = followerX + 'px';
         follower.style.top = followerY + 'px';
-        
         requestAnimationFrame(animateCursor);
     }
     animateCursor();
 
-    // Cursor interaction with links
-    const interactiveElements = document.querySelectorAll('a, button, .menu-trigger, .magnetic');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            follower.style.width = '80px';
-            follower.style.height = '80px';
-            follower.style.backgroundColor = 'rgba(0,0,0,0.05)';
-            follower.style.border = 'none';
-        });
-        el.addEventListener('mouseleave', () => {
-            follower.style.width = '40px';
-            follower.style.height = '40px';
-            follower.style.backgroundColor = 'transparent';
-            follower.style.border = '1px solid black';
+    // --- BLOB MOVEMENT ---
+    const blobs = document.querySelectorAll('.blob');
+    document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth) - 0.5;
+        const y = (e.clientY / window.innerHeight) - 0.5;
+        
+        blobs.forEach((blob, i) => {
+            const shift = (i + 1) * 20;
+            blob.style.transform = `translate(${x * shift}px, ${y * shift}px)`;
         });
     });
 
@@ -51,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const rect = el.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-            
             el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
         });
         el.addEventListener('mouseleave', () => {
@@ -67,8 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menuTrigger.addEventListener('click', () => {
         menuTrigger.classList.toggle('active');
         menuOverlay.classList.toggle('active');
-        
-        // Stagger menu links
         if(menuOverlay.classList.contains('active')) {
             menuItems.forEach((item, index) => {
                 item.style.setProperty('--i', index);
@@ -77,19 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- REVEAL ANIMATIONS ---
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('active');
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    const revealElements = document.querySelectorAll('.reveal, .reveal-delayed');
-    revealElements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal, .reveal-delayed').forEach(el => observer.observe(el));
 });
