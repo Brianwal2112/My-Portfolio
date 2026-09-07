@@ -692,3 +692,7 @@ body:not(.loading) .preloader {
   font-size: 0.9rem;
   margin: 0;
 }
+.reel-item {
+  text-decoration: none;
+  color: inherit;
+}
