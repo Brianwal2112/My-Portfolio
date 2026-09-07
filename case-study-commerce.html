@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commerce Engine | Case Study</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="minimal-nav">
+        <a href="index.html" class="logo">HENRY<span>.</span></a>
+        <div class="menu-trigger" id="menuTrigger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="text-menu">Menu</span>
+        </div>
+    </nav>
+
+    <header class="cs-header">
+        <div class="container" style="text-align: center;">
+            <span class="label">Case Study</span>
+            <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 1.1;">Commerce Engine</h1>
+            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 2rem auto;">Redefining the luxury shopping experience through performance and precision.</p>
+            <a href="index.html" class="btn-text" style="text-decoration: none; color: #000; font-weight: 600; border-bottom: 1px solid #000;">&larr; Back to Work</a>
+        </div>
+    </header>
+
+    <main class="cs-content">
+        <!-- SECTION 1: THE CHALLENGE -->
+        <div class="cs-section reveal">
+            <div class="cs-grid">
+                <div>
+                    <span class="label">The Challenge</span>
+                    <h2>The Friction of <br>Modern Commerce</h2>
+                    <p>Many luxury e-commerce platforms struggle with the paradox of high-fidelity visuals and fast load times. The challenge was to create a store that felt opulent and rich, while maintaining a sub-1 second page load time and a seamless checkout flow.</p>
+                </div>
+                <div class="cs-visual">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="cs-image" alt="Challenge">
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: THE SOLUTION -->
+        <div class="cs-section reveal">
+            <div class="cs-grid" style="direction: rtl;">
+                <div style="direction: ltr;">
+                    <span class="label">The Solution</span>
+                    <h2>Architecture of <br>Efficiency</h2>
+                    <p>I implemented a Next.js architecture utilizing Incremental Static Regeneration (ISR) for near-instant page loads. The backend was decoupled into a microservices architecture using Node.js and MongoDB, ensuring that traffic spikes during product drops never affected stability.</p>
+                    <div class="case-tags" style="margin-top: 2rem;">
+                        <span>Next.js</span><span>Node.js</span><span>ISR</span><span>MongoDB</span>
+                    </div>
+                </div>
+                <div class="cs-visual">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="cs-image" alt="Solution">
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: RESULTS -->
+        <div class="cs-section reveal" style="text-align: center;">
+            <span class="label">The Results</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem;">Tangible Impact</h2>
+            <div class="secondary-grid" style="margin-top: 4rem;">
+                <div class="stat-box">
+                    <span class="stat-num">40%</span>
+                    <span class="stat-label">Increase in Conversion</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">0.8s</span>
+                    <span class="stat-label">Avg. Page Load</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label">Uptime during Launch</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="padding: 5rem 0; border-top: 1px solid var(--border-color); text-align: center;">
+        <a href="index.html" class="btn-primary">Back to Home</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

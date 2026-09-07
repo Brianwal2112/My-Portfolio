@@ -10,13 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (count >= 100) {
             count = 100;
             clearInterval(loadInterval);
-            setTimeout(() => {
-                body.classList.remove('loading');
-            }, 500);
+            finalizeLoad();
         }
-        percentText.textContent = count + '%';
-        progressBar.style.width = count + '%';
+        if(percentText) percentText.textContent = count + '%';
+        if(progressBar) progressBar.style.width = count + '%';
     }, 80);
+
+    function finalizeLoad() {
+        body.classList.remove('loading');
+    }
 
     // --- CURSOR LOGIC ---
     const cursor = document.querySelector('.cursor');
@@ -26,30 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        cursor.style.left = mouseX + 'px';
-        cursor.style.top = mouseY + 'px';
+        if(cursor) {
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+        }
     });
 
     function animateCursor() {
         followerX += (mouseX - followerX) * 0.1;
         followerY += (mouseY - followerY) * 0.1;
-        follower.style.left = followerX + 'px';
-        follower.style.top = followerY + 'px';
+        if(follower) {
+            follower.style.left = followerX + 'px';
+            follower.style.top = followerY + 'px';
+        }
         requestAnimationFrame(animateCursor);
     }
     animateCursor();
-
-    // --- BLOB MOVEMENT ---
-    const blobs = document.querySelectorAll('.blob');
-    document.addEventListener('mousemove', (e) => {
-        const x = (e.clientX / window.innerWidth) - 0.5;
-        const y = (e.clientY / window.innerHeight) - 0.5;
-        
-        blobs.forEach((blob, i) => {
-            const shift = (i + 1) * 20;
-            blob.style.transform = `translate(${x * shift}px, ${y * shift}px)`;
-        });
-    });
 
     // --- MAGNETIC EFFECT ---
     const magnetics = document.querySelectorAll('.magnetic');
@@ -70,22 +64,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuOverlay = document.querySelector('.menu-overlay');
     const menuItems = document.querySelectorAll('.menu-item a');
 
-    menuTrigger.addEventListener('click', () => {
-        menuTrigger.classList.toggle('active');
-        menuOverlay.classList.toggle('active');
-        if(menuOverlay.classList.contains('active')) {
-            menuItems.forEach((item, index) => {
-                item.style.setProperty('--i', index);
-            });
-        }
-    });
+    if(menuTrigger && menuOverlay) {
+        menuTrigger.addEventListener('click', () => {
+            menuTrigger.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            if(menuOverlay.classList.contains('active')) {
+                menuItems.forEach((item, index) => {
+                    item.style.setProperty('--i', index);
+                });
+            }
+        });
+    }
 
     // --- REVEAL ANIMATIONS ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('active');
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal, .reveal-delayed').forEach(el => observer.observe(el));
+
+    // --- CONTACT FORM AJAX (Option 2 Upgrade) ---
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            const submitBtn = contactForm.querySelector('button');
+            const originalBtnText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept-Name': 'application/json' }
+                });
+
+                if (response.ok) {
+                    submitBtn.textContent = 'Message Sent!';
+                    contactForm.reset();
+                } else {
+                    submitBtn.textContent = 'Error occurred';
+                }
+            } catch (err) {
+                submitBtn.textContent = 'Error occurred';
+            } finally {
+                setTimeout(() => {
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
+        });
+    }
 });
