@@ -74,6 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+
+        // FIX: Close menu when a link is clicked
+        menuItems.forEach(link => {
+            link.addEventListener('click', () => {
+                menuTrigger.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        });
     }
 
     // --- REVEAL ANIMATIONS ---
@@ -85,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal, .reveal-delayed').forEach(el => observer.observe(el));
 
-    // --- CONTACT FORM AJAX (Option 2 Upgrade) ---
+    // --- CONTACT FORM AJAX ---
     const contactForm = document.getElementById('contactForm');
     if(contactForm) {
         contactForm.addEventListener('submit', async (e) => {
