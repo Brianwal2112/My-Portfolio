@@ -27,7 +27,7 @@
         <div class="menu-inner">
             <ul class="menu-links">
                 <li class="menu-item"><a href="#about" data-text="About">About</a></li>
-                <li class="menu-item"><a href="#work" data-text="Work">Work</a></li>
+                <li class="menu-item"><a href="#work" data-text="Projects">Projects</a></li>
                 <li class="menu-item"><a href="#resume" data-text="Resume">Resume</a></li>
                 <li class="menu-item"><a href="#skills" data-text="Skills">Skills</a></li>
                 <li class="menu-item"><a href="#contact" data-text="Contact">Contact</a></li>
@@ -53,7 +53,7 @@
                 </div>
                 <p class="reveal-delayed">Full-Stack Engineer specializing in high-performance web applications and decentralized ecosystems.</p>
                 <div class="hero-btns reveal-delayed">
-                    <a href="#work" class="btn-primary magnetic">View Case Studies</a>
+                    <a href="#work" class="btn-primary magnetic">View Projects</a>
                     <a href="#resume" class="btn-outline magnetic">Interactive CV</a>
                 </div>
             </div>
@@ -95,7 +95,7 @@
             </div>
         </section>
 
-        <!-- DIGITAL RESUME SECTION (Option 2 Upgrade) -->
+        <!-- DIGITAL RESUME SECTION -->
         <section id="resume" class="resume-section">
             <div class="container">
                 <div class="section-intro reveal">
@@ -104,7 +104,6 @@
                 </div>
                 <div class="resume-container">
                     <div class="resume-grid">
-                        <!-- Experience Column -->
                         <div class="resume-col">
                             <h3 class="col-title">Professional Path</h3>
                             <div class="resume-item reveal">
@@ -128,7 +127,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Education & Skills Column -->
                         <div class="resume-col">
                             <h3 class="col-title">Education & Certs</h3>
                             <div class="resume-item reveal">
@@ -190,16 +188,16 @@
             </div>
         </section>
 
-        <!-- WORK SECTION -->
+        <!-- PROJECTS SECTION (REPLACED CASE STUDIES) -->
         <section id="work" class="work-section">
             <div class="container">
                 <div class="section-intro reveal">
-                    <span class="label">Selected Works</span>
-                    <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 6rem;">Case Studies</h2>
+                    <span class="label">Selected Work</span>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 6rem;">Projects</h2>
                 </div>
                 
                 <div class="work-grid">
-                    <!-- FEATURED PROJECT -->
+                    <!-- FEATURED PROJECT PREVIEW -->
                     <div class="featured-project reveal">
                         <div class="featured-visual">
                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Featured">
@@ -211,18 +209,21 @@
                             <div class="case-tags">
                                 <span>Next.js</span><span>Node.js</span><span>Stripe</span><span>MongoDB</span>
                             </div>
-                            <a href="case-study-commerce.html" class="btn-text">Explore Case Study &rarr;</a>
+                            <div class="project-links" style="display: flex; gap: 2rem; margin-top: 2rem;">
+                                <a href="case-study-commerce.html" class="btn-text">View Details &rarr;</a>
+                                <a href="e-commerce-site/index.html" class="btn-text">Live Demo &rarr;</a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- SECONDARY PROJECTS -->
+                    <!-- PROJECT PREVIEWS GRID -->
                     <div class="secondary-grid">
                         <div class="case-study reveal">
                             <div class="case-visual"><img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=600&q=80" alt="Flow"></div>
                             <div class="case-content">
                                 <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem;">Flow Manager</h3>
                                 <p style="color: var(--text-muted); margin-bottom: 1.5rem;">SaaS productivity tool for creative teams.</p>
-                                <a href="task-manager-app/index.html" class="btn-text">View Project &rarr;</a>
+                                <a href="task-manager-app/index.html" class="btn-text">Live Demo &rarr;</a>
                             </div>
                         </div>
                         <div class="case-study reveal">
@@ -230,7 +231,7 @@
                             <div class="case-content">
                                 <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem;">Atmosphere</h3>
                                 <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Real-time meteorological API dashboard.</p>
-                                <a href="weather-dashboard/index.html" class="btn-text">View Project &rarr;</a>
+                                <a href="weather-dashboard/index.html" class="btn-text">Live Demo &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -238,7 +239,7 @@
             </div>
         </section>
 
-        <!-- CONTACT SECTION (Option 2 Upgrade) -->
+        <!-- CONTACT SECTION -->
         <section id="contact" class="contact-section">
             <div class="container">
                 <div class="contact-wrapper">
@@ -252,7 +253,6 @@
                         </div>
                     </div>
                     <div class="contact-form-container reveal">
-                        <!-- FORM UPDATED FOR FORMSPREE -->
                         <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-id-here" method="POST">
                             <div class="form-group">
                                 <input type="text" name="name" placeholder="Name" required>
@@ -271,7 +271,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer style="padding: 5rem 0; border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
@@ -280,7 +280,7 @@
                 </div>
                 <div class="footer-nav">
                     <a href="#about">About</a>
-                    <a href="#work">Work</a>
+                    <a href="#work">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>

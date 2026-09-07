@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commerce Engine | Case Study</title>
+    <title>Commerce Engine | Project Detail</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="loading">
     <nav class="minimal-nav">
         <a href="index.html" class="logo">HENRY<span>.</span></a>
         <div class="menu-trigger" id="menuTrigger">
@@ -21,10 +21,13 @@
 
     <header class="cs-header">
         <div class="container" style="text-align: center;">
-            <span class="label">Case Study</span>
+            <span class="label">Project Detail</span>
             <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 1.1;">Commerce Engine</h1>
             <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 2rem auto;">Redefining the luxury shopping experience through performance and precision.</p>
-            <a href="index.html" class="btn-text" style="text-decoration: none; color: #000; font-weight: 600; border-bottom: 1px solid #000;">&larr; Back to Work</a>
+            <div class="cs-links" style="display: flex; gap: 2rem; justify-content: center; margin-top: 2rem;">
+                <a href="index.html" class="btn-text" style="text-decoration: none; color: #000; font-weight: 600; border-bottom: 1px solid #000;">&larr; Back to Projects</a>
+                <a href="e-commerce-site/index.html" class="btn-primary" style="text-decoration: none; color: #fff; padding: 0.8rem 2rem; font-size: 0.8rem;">Live Demo &rarr;</a>
+            </div>
         </div>
     </header>
 
@@ -32,9 +35,9 @@
         <!-- SECTION 1: THE CHALLENGE -->
         <div class="cs-section reveal">
             <div class="cs-grid">
-                <div>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
                     <span class="label">The Challenge</span>
-                    <h2>The Friction of <br>Modern Commerce</h2>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 2rem;">The Friction of <br>Modern Commerce</h2>
                     <p>Many luxury e-commerce platforms struggle with the paradox of high-fidelity visuals and fast load times. The challenge was to create a store that felt opulent and rich, while maintaining a sub-1 second page load time and a seamless checkout flow.</p>
                 </div>
                 <div class="cs-visual">
@@ -46,9 +49,9 @@
         <!-- SECTION 2: THE SOLUTION -->
         <div class="cs-section reveal">
             <div class="cs-grid" style="direction: rtl;">
-                <div style="direction: ltr;">
+                <div style="direction: ltr; display: flex; flex-direction: column; justify-content: center;">
                     <span class="label">The Solution</span>
-                    <h2>Architecture of <br>Efficiency</h2>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 2rem;">Architecture of <br>Efficiency</h2>
                     <p>I implemented a Next.js architecture utilizing Incremental Static Regeneration (ISR) for near-instant page loads. The backend was decoupled into a microservices architecture using Node.js and MongoDB, ensuring that traffic spikes during product drops never affected stability.</p>
                     <div class="case-tags" style="margin-top: 2rem;">
                         <span>Next.js</span><span>Node.js</span><span>ISR</span><span>MongoDB</span>
