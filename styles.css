@@ -44,7 +44,7 @@ body.loading {
 .preloader {
     position: fixed;
     inset: 0;
-    background: #000;
+    background: #fff;
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -96,7 +96,6 @@ body:not(.loading) .preloader {
     pointer-events: none;
     z-index: 10000;
     transform: translate(-50%, -50%);
-    
 }
 
 .cursor-follower {
@@ -109,7 +108,6 @@ body:not(.loading) .preloader {
     z-index: 9999;
     transform: translate(-50%, -50%);
     transition: width 0.3s, height 0.3s, border 0.3s;
-    
 }
 
 /* --- NAVIGATION --- */
@@ -175,7 +173,7 @@ body:not(.loading) .preloader {
 .menu-overlay {
     position: fixed;
     inset: 0;
-    background: #000;
+    background: #fff;
     z-index: 999;
     display: flex;
     align-items: center;
@@ -451,7 +449,7 @@ body:not(.loading) .preloader {
 }
 
 .skill-card {
-    background: #000;
+    background: #fff;
     padding: 3rem 2rem;
     border: 1px solid var(--border-color);
     transition: var(--transition-main);
@@ -634,7 +632,7 @@ body:not(.loading) .preloader {
 }
 
 .contact-section .btn-primary {
-    background: #000;
+    background: #fff;
     color: #000;
     width: fit-content;
 }
@@ -867,10 +865,3 @@ footer {
     opacity: 0;
 }
 
-
-.cursor-inverted {
-    background: #fff !important;
-}
-.cursor-follower.cursor-inverted {
-    border-color: #fff !important;
-}

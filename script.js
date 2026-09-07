@@ -32,25 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cursor.style.left = mouseX + 'px';
             cursor.style.top = mouseY + 'px';
         }
-        
-        // --- COLOR ADAPTATION LOGIC ---
-        // Check element under cursor
-        const element = document.elementFromPoint(mouseX, mouseY);
-        if (element) {
-            const bgColor = window.getComputedStyle(element).backgroundColor;
-            // Convert rgb to grayscale value
-            const rgb = bgColor.match(/\d+/g);
-            if (rgb) {
-                const brightness = (parseInt(rgb[0]) * 299 + parseInt(rgb[1]) * 587 + parseInt(rgb[2]) * 114) / 1000;
-                if (brightness < 128) {
-                    cursor?.classList.add('cursor-inverted');
-                    follower?.classList.add('cursor-inverted');
-                } else {
-                    cursor?.classList.remove('cursor-inverted');
-                    follower?.classList.remove('cursor-inverted');
-                }
-            }
-        }
     });
 
     function animateCursor() {
@@ -94,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // FIX: Close menu when a link is clicked
         menuItems.forEach(link => {
             link.addEventListener('click', () => {
                 menuTrigger.classList.remove('active');
