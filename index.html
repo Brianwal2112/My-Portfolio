@@ -3,28 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Henry | Design & Engineering</title>
+    <title>HENRY | Design & Engineering</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="menu-overlay">
+        <div class="menu-inner">
+            <ul class="menu-links">
+                <li class="menu-item"><a href="about.html" data-text="About">About</a></li>
+                <li class="menu-item"><a href="projects.html" data-text="Work">Work</a></li>
+                <li class="menu-item"><a href="skills.html" data-text="Skills">Skills</a></li>
+                <li class="menu-item"><a href="contact.html" data-text="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
     <nav class="minimal-nav">
         <a href="index.html" class="logo">HENRY<span>.</span></a>
-        <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Work</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="menu-trigger" id="menuTrigger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="text-menu">Menu</span>
+        </div>
     </nav>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1 class="reveal">Engineering <br><em>Digital Poetry</em></h1>
+                <div class="text-mask">
+                    <h1 class="reveal">Engineering <br><em class="italic-text">Digital Poetry</em></h1>
+                </div>
                 <p class="reveal-delayed">Full-Stack Developer & Web3 Architect specializing in high-performance digital experiences.</p>
-                <a href="projects.html" class="hero-cta reveal-delayed">Explore Work &rarr;</a>
+                <a href="projects.html" class="hero-cta reveal-delayed magnetic">Explore Work &rarr;</a>
             </div>
         </section>
 
@@ -33,15 +51,15 @@
                 <div class="editorial-grid">
                     <div class="editorial-item reveal">
                         <span class="label">01 / Expertise</span>
-                        <h2>Clean Architecture</h2>
+                        <h2 class="magnetic">Clean Architecture</h2>
                         <p>Building scalable systems that prioritize performance and user experience without compromise.</p>
-                        <a href="skills.html" class="editorial-link">View Skills</a>
+                        <a href="skills.html" class="editorial-link magnetic">View Skills</a>
                     </div>
                     <div class="editorial-item reveal">
                         <span class="label">02 / Vision</span>
-                        <h2>Web3 Integration</h2>
+                        <h2 class="magnetic">Web3 Integration</h2>
                         <p>Bridging the gap between traditional web applications and the decentralized future.</p>
-                        <a href="projects.html" class="editorial-link">Selected Works</a>
+                        <a href="projects.html" class="editorial-link magnetic">Selected Works</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +67,9 @@
 
         <section class="big-statement">
             <div class="container">
-                <h2 class="reveal">"Design is not just what it looks like, but how it works."</h2>
+                <div class="text-mask">
+                    <h2 class="reveal">"Design is not just what it looks like, <br>but how it works."</h2>
+                </div>
             </div>
         </section>
     </main>
@@ -58,7 +78,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h2>HENRY.</strong>
+                    <h2>HENRY.</h2>
                     <p>Based in Digital Space</p>
                 </div>
                 <div class="footer-nav">

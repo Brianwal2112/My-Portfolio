@@ -431,3 +431,127 @@ body {
 body.dark-mode {
   background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1920&q=80');
 }
+/* --- CUSTOM CURSOR --- */
+.cursor {
+  width: 8px;
+  height: 8px;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), width 0.3s, height 0.3s, background-color 0.3s;
+  transform: translate(-50%, -50%);
+}
+
+/* --- MENU OVERLAY --- */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-color);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu-item {
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.menu-item a {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 10vw, 6rem);
+  color: var(--bg-color);
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(100%);
+}
+
+.menu-overlay.active .menu-item a {
+  transform: translateY(0);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+/* --- MENU TRIGGER --- */
+.menu-trigger {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1100;
+}
+
+.menu-trigger .line {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.menu-trigger .text-menu {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.menu-trigger.active .line:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.menu-trigger.active .line:nth-child(2) {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* --- TEXT MASKING --- */
+.text-mask {
+  overflow: hidden;
+}
+
+.text-mask h1, .text-mask h2 {
+  transform: translateY(100%);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.text-mask .reveal.active, .text-mask .reveal-delayed.active {
+  transform: translateY(0);
+}
+
+/* --- MAGNETIC ELEMENT --- */
+.magnetic {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
