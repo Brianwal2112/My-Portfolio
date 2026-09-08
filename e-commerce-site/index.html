@@ -3,66 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUXE | Minimalist Boutique</title>
+    <title>LUXE | Minimalist Luxury Commerce</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">LUXE</div>
+    <nav class="nav" id="mainNav">
+        <a href="index.html" class="logo">LUXE<span>.</span></a>
         <ul class="nav-links">
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Collections</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#shop">Collections</a></li>
+            <li><a href="#about">Philosophy</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="cart-icon">Cart (0)</div>
+        <div class="cart-trigger" id="cartBtn">
+            <span class="cart-icon">BAG</span>
+            <span class="cart-count">0</span>
+        </div>
     </nav>
 
-    <header class="hero">
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80" class="hero-img" alt="Luxury Store">
         <div class="hero-content">
-            <h1>Essence of <br>Simplicity</h1>
-            <p>Curated essentials for the modern individual.</p>
-            <a href="#shop" class="cta">Shop Collection</a>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6b//auto=format&fit=crop&w=1000&q=80" alt="Luxury Product">
-        </div>
-    </header>
-
-    <section id="shop" class="products">
-        <div class="container">
-            <h2 class="section-title">Featured Pieces</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e56471e238a?auto=format&fit=crop&w=500&q=80" alt="Product 1">
-                    <h3>Minimalist Watch</h3>
-                    <p>$199.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6b?auto=format&fit=crop&w=500&q=80" alt="Product 2">
-                    <h3>Leather Tote</h3>
-                    <p>$250.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1584917865442-8a72f077754d?auto=format&fit=crop&w=500&q=80" alt="Product 3">
-                    <h3>Studio Lamp</h3>
-                    <p>$89.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=500&q=80" alt="Product 4">
-                    <h3>Analog Camera</h3>
-                    <p>$450.00</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
+            <h1>The Art of <br>Essentialism.</h1>
+            <a href="#shop" class="btn-luxury">Explore Collection</a>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 LUXE Boutique. All rights reserved.</p>
-    </footer>
+    <section id="shop" class="section">
+        <div class="section-title">
+            <span class="label">Curated Selection</span>
+            <h2>Seasonal Essentials</h2>
+        </div>
+        <div class="product-grid" id="productGrid">
+            <!-- Products injected by JS -->
+        </div>
+    </section>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <span id="closeCart" style="cursor:pointer">CLOSE</span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn-checkout">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
