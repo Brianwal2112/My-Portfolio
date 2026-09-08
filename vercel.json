@@ -1,12 +1,16 @@
 {
   "version": 2,
   "name": "dark-mode-portfolio",
-
+  "cleanUrls": true,
   "github": {
     "enabled": true,
     "autoAlias": true
   },
   "routes": [
+    {
+      "src": "/e-commerce-site",
+      "dest": "/e-commerce-site/index.html"
+    },
     {
       "src": "/(.*)",
       "dest": "/$1"
@@ -19,24 +23,6 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/styles.css",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
-      ]
-    },
-    {
-      "source": "/script.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
         }
       ]
     }
