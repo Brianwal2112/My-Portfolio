@@ -2,10 +2,6 @@
   "version": 2,
   "name": "dark-mode-portfolio",
   "cleanUrls": true,
-  "github": {
-    "enabled": true,
-    "autoAlias": true
-  },
   "routes": [
     {
       "src": "/e-commerce-site",
@@ -14,17 +10,6 @@
     {
       "src": "/(.*)",
       "dest": "/$1"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
     }
   ]
 }
