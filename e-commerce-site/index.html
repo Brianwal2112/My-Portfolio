@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body class="loading">
+    <!-- PROMO BANNER -->
+    <div class="promo-banner">Complimentary Express Shipping on all orders above $500</div>
+
     <nav class="nav" id="mainNav">
         <a href="index.html" class="logo">LUMINA<span>.</span></a>
         <ul class="nav-links">
@@ -25,7 +28,7 @@
     </nav>
 
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf//auto=format&fit=crop&w=1600&q=80" class="hero-img" alt="Luxury Home">
+        <img src="https://images.unsplash.com/photo-1490481639946-1ebd1d20bf//auto=format&fit=crop&w=1600&q=80" class="hero-img" alt="Luxury Home">
         <div class="hero-content">
             <h1 class="reveal">Elevated Living. <br><em class="italic-text">Pure Form.</em></h1>
             <a href="shop.html" class="btn-premium reveal-delayed">Explore the Collection</a>
@@ -33,7 +36,7 @@
         <div class="scroll-indicator">SCROLL</div>
     </section>
 
-    <!-- BRAND PROMISE SECTION (New) -->
+    <!-- BRAND PROMISE -->
     <section class="brand-promise">
         <div class="container" style="text-align:center; max-width:800px;">
             <span class="label reveal">Our Ethos</span>
@@ -42,9 +45,10 @@
         </div>
     </section>
 
+    <!-- FEATURED CATEGORIES -->
     <section class="section">
         <div class="section-title">
-            <span class="label">Curated Worlds</span>
+            <span class="label reveal">Curated Worlds</span>
             <h2 class="reveal">The Collections</h2>
         </div>
         <div class="category-grid">
@@ -63,30 +67,82 @@
         </div>
     </section>
 
-    <!-- VISUAL BREAK / STORY SECTION (New) -->
+    <!-- BEST SELLERS -->
+    <section class="section">
+        <div class="collection-label reveal">
+            <h2 class="serif">Best Sellers</h2>
+            <a href="shop.html" class="collection-link">View All &rarr;</a>
+        </div>
+        <div class="product-grid" id="bestSellersGrid"></div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="value-props">
+        <div class="prop-item reveal">
+            <div class="icon">?</div>
+            <h3>Ethical Sourcing</h3>
+            <p>We partner with small-scale artisans to ensure every material is sustainably sourced.</p>
+        </div>
+        <div class="prop-item reveal">
+            <div class="icon">?</div>
+            <h3>Timeless Design</h3>
+            <p>Avoiding trends to create pieces that remain relevant for decades, not seasons.</p>
+        </div>
+        <div class="prop-item reveal">
+            <div class="icon">?</div>
+            <h3>Precision Craft</h3>
+            <p>Each piece undergoes a 12-point quality check before it enters your home.</p>
+        </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section class="section" style="background: var(--bg-soft);">
+        <div class="collection-label reveal">
+            <h2 class="serif">New Arrivals</h2>
+            <a href="shop.html" class="collection-link">View All &rarr;</a>
+        </div>
+        <div class="product-grid" id="newArrivalsGrid"></div>
+    </section>
+
+    <!-- BRAND MOMENT (Story) -->
     <section class="brand-moment">
-        <div class="moment-grid">
-            <div class="moment-visual">
-                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80" alt="Luxury Detail">
-            </div>
-            <div class="moment-text">
-                <span class="label">Craftsmanship</span>
-                <h2 class="serif">The Beauty of <br>the Invisible.</h2>
-                <p>From the same-day precision of our tailoring to the same-grain leather we source from Tuscany, the quality is found in the details you don't see, but always feel.</p>
-                <a href="about.html" class="btn-text">Our Story &rarr;</a>
-            </div>
+        <div class="moment-visual">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80" alt="Luxury Detail">
+        </div>
+        <div class="moment-text">
+            <span class="label">Craftsmanship</span>
+            <h2 class="serif">The Beauty of <br>the Invisible.</h2>
+            <p>From the same-day precision of our tailoring to the same-grain leather we source from Tuscany, the quality is found in the details you don't see, but always feel.</p>
+            <a href="about.html" class="btn-text">Our Story &rarr;</a>
         </div>
     </section>
 
-    <section id="shop" class="section">
+    <!-- CUSTOMER REVIEWS -->
+    <section class="reviews-section">
         <div class="section-title">
-            <span class="label">Featured</span>
-            <h2 class="reveal">Essential Pieces</h2>
+            <span class="label reveal">Client Voice</span>
+            <h2 class="reveal">Kind Words</h2>
         </div>
-        <div class="product-grid" id="featuredGrid"></div>
+        <div class="reviews-grid">
+            <div class="review-card reveal">
+                <div class="review-stars">?????</div>
+                <p class="review-text">"The quality of the silk blazer is unmatched. It feels like a second skin and the fit is absolute perfection."</p>
+                <span class="review-author">Elena R. — New York</span>
+            </div>
+            <div class="review-card reveal">
+                <div class="review-stars">?????</div>
+                <p class="review-text">"Lumina understands that luxury is about the absence of noise. Their aesthetic is exactly what I have been searching for."</p>
+                <span class="review-author">Julian M. — Paris</span>
+            </div>
+            <div class="review-card reveal">
+                <div class="review-stars">?????</div>
+                <p class="review-text">"Fast shipping, sustainable packaging, and a product that exceeds every expectation. Truly a premium experience."</p>
+                <span class="review-author">Sophia K. — Tokyo</span>
+            </div>
+        </div>
     </section>
 
-    <!-- NEWSLETTER SECTION (New) -->
+    <!-- NEWSLETTER -->
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">

@@ -1,54 +1,61 @@
 const PRODUCTS = [
-    // APPAREL - High End Fashion
-    { id: 1, name: 'Noir Silk Blazer', price: 850, category: 'apparel', image: 'https://images.unsplash.com/photo-1591047139829-d95777367676?auto=format&fit=crop&w=800&q=80', desc: 'Tailored from 100% Italian silk, this blazer defines modern elegance. A masterclass in minimal tailoring for the modern professional.' },
-    { id: 2, name: 'Ivory Cashmere Knit', price: 420, category: 'apparel', image: 'https://images.unsplash.com/photo-1576528647589-C77769277226?auto=format&fit=crop&w=800&q=80', desc: 'Pure Mongolian cashmere. Breathable, soft, and timeless. A piece designed to last a lifetime.' },
-    { id: 3, name: 'Studio Tailored Trousers', price: 310, category: 'apparel', image: 'https://images.unsplash.com/photo-1594633926227-d4b235d6932b?auto=format&fit=crop&w=800&q=80', desc: 'Precision cut trousers with a subtle taper. Crafted from sustainable wool blends.' },
-    { id: 7, name: 'Midnight Velvet Gown', price: 1400, category: 'apparel', image: 'https://images.unsplash.com/photo-1566174053879-315B377f526f?auto=format&fit=crop&w=800&q=80', desc: 'Hand-stitched midnight velvet. A sculptural piece for evening galas and red-carpet events.' },
-    { id: 8, name: 'Alabaster Linen Shirt', price: 280, category: 'apparel', image: 'https://images.unsplash.com/photo-1598033129183-c87b67750810?auto=format&fit=crop&w=800&q=80', desc: '100% organic linen. Breathable, lightweight, and effortlessly refined.' },
-
-    // ACCESSORIES - Leather & Studio
-    { id: 4, name: 'Minimalist Leather Tote', price: 1200, category: 'accessories', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', desc: 'Hand-stitched Italian calfskin leather. Structured, spacious, and unlined for a natural luxury feel.' },
-    { id: 6, name: 'Architectural Heel', price: 680, category: 'accessories', image: 'https://images.unsplash.com/photo-1543163521-16127f6576bc?auto=format&fit=crop&w=800&q=80', desc: 'Sculpted silhouette designed for balance and poise. A statement piece in modern footwear.' },
-    { id: 9, name: 'Suede Chelsea Boot', price: 550, category: 'accessories', image: 'https://images.unsplash.com/photo-1638242657605-7ed692672703?auto=format&fit=crop&w=800&q=80', desc: 'Premium water-resistant suede. A timeless silhouette for urban exploration.' },
-    { id: 10, name: 'Aviator Frame Onyx', price: 320, category: 'accessories', image: 'https://images.unsplash.com/photo-1572635196237-14b3f17dfae0?auto=format&fit=crop&w=800&q=80', desc: 'Polarized lenses with a lightweight titanium frame. The ultimate in visual clarity.' },
-
-    // JEWELRY - Fine Metals
-    { id: 5, name: 'Sleek Monochrome Watch', price: 2100, category: 'jewelry', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80', desc: 'Sapphire crystal glass with a matte black titanium case. A timeless piece of engineering.' },
-    { id: 11, name: 'Gold Orbital Ring', price: 1800, category: 'jewelry', image: 'https://images.unsplash.com/photo-1605100804763-247867157a70?auto=format&fit=crop&w=800&q=80', desc: '18k solid gold with a brushed matte finish. A singular, sculptural statement.' },
-    { id: 12, name: 'Diamond Studs', price: 3500, category: 'jewelry', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60//auto=format&fit=crop&w=800&q=80', desc: 'Conflict-free diamonds set in platinum. Pure, radiant brilliance in a minimal form.' },
-    { id: 13, name: 'Silver Link Bracelet', price: 720, category: 'jewelry', image: 'https://images.unsplash.com/photo-1611591437289-567d78663949?auto=format&fit=crop&w=800&q=80', desc: 'Hand-linked sterling silver. A balanced blend of strength and elegance.' },
+    { id: 1, name: 'Noir Silk Blazer', price: 850, category: 'apparel', image: 'https://images.unsplash.com/photo-1591047139829-d95777367676?auto=format&fit=crop&w=800&q=80', desc: 'Tailored from 100% Italian silk, this blazer defines modern elegance.', bestSeller: true, newArrival: false },
+    { id: 2, name: 'Ivory Cashmere Knit', price: 420, category: 'apparel', image: 'https://images.unsplash.com/photo-1576528647589-C77769277226?auto=format&fit=crop&w=800&q=80', desc: 'Pure Mongolian cashmere. Breathable, soft, and timeless.', bestSeller: false, newArrival: true },
+    { id: 3, name: 'Studio Tailored Trousers', price: 310, category: 'apparel', image: 'https://images.unsplash.com/photo-1594633926227-d4b235d6932b?auto=format&fit=crop&w=800&q=80', desc: 'Precision cut trousers with a subtle taper.', bestSeller: true, newArrival: false },
+    { id: 4, name: 'Minimalist Leather Tote', price: 1200, category: 'accessories', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', desc: 'Hand-stitched Italian calfskin leather.', bestSeller: true, newArrival: false },
+    { id: 5, name: 'Sleek Monochrome Watch', price: 2100, category: 'jewelry', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80', desc: 'Sapphire crystal glass with a matte black titanium case.', bestSeller: false, newArrival: true },
+    { id: 6, name: 'Architectural Heel', price: 680, category: 'accessories', image: 'https://images.unsplash.com/photo-1543163521-16127f6576bc?auto=format&fit=crop&w=800&q=80', desc: 'Sculpted silhouette designed for balance and poise.', bestSeller: false, newArrival: true },
+    { id: 7, name: 'Midnight Velvet Gown', price: 1400, category: 'apparel', image: 'https://images.unsplash.com/photo-1566174053879-315B377f526f?auto=format&fit=crop&w=800&q=80', desc: 'Hand-stitched midnight velvet.', bestSeller: true, newArrival: true },
+    { id: 8, name: 'Alabaster Linen Shirt', price: 280, category: 'apparel', image: 'https://images.unsplash.com/photo-1598033129183-c87b67750810?auto=format&fit=crop&w=800&q=80', desc: '100% organic linen.', bestSeller: false, newArrival: false },
+    { id: 9, name: 'Suede Chelsea Boot', price: 550, category: 'accessories', image: 'https://images.unsplash.com/photo-1638242657605-7ed692672??auto=format&fit=crop&w=800&q=80', desc: 'Premium water-resistant suede.', bestSeller: false, newArrival: true },
+    { id: 10, name: 'Aviator Frame Onyx', price: 320, category: 'accessories', image: 'https://images.unsplash.com/photo-1572635196237-14b3f17dfae0?auto=format&fit=crop&w=800&q=80', desc: 'Polarized lenses with a lightweight titanium frame.', bestSeller: true, newArrival: false },
+    { id: 11, name: 'Gold Orbital Ring', price: 1800, category: 'jewelry', image: 'https://images.unsplash.com/photo-1605100804763-247867157a70?auto=format&fit=crop&w=800&q=80', desc: '18k solid gold with a brushed matte finish.', bestSeller: true, newArrival: false },
+    { id: 12, name: 'Diamond Studs', price: 3500, category: 'jewelry', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60?auto=format&fit=crop&w=800&q=80', desc: 'Conflict-free diamonds set in platinum.', bestSeller: false, newArrival: true },
+    { id: 13, name: 'Silver Link Bracelet', price: 720, category: 'jewelry', image: 'https://images.unsplash.com/photo-1611591437289-567d78663949?auto=format&fit=crop&w=800&q=80', desc: 'Hand-linked sterling silver.', bestSeller: true, newArrival: false },
 ];
 
 let cart = JSON.parse(localStorage.getItem('lumina-cart')) || [];
 
 function init() {
     const grid = document.getElementById('productGrid');
+    const bestSellersGrid = document.getElementById('bestSellersGrid');
+    const newArrivalsGrid = document.getElementById('newArrivalsGrid');
+
     if (grid) {
         const urlParams = new URLSearchParams(window.location.search);
         const cat = urlParams.get('cat');
         if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
-            renderProducts(PRODUCTS.slice(0, 4));
+            // Home page: only a few featured items
+            renderProducts(grid, PRODUCTS.slice(0, 4));
         } else {
             const filtered = cat ? PRODUCTS.filter(p => p.category === cat) : PRODUCTS;
-            renderProducts(filtered);
+            renderProducts(grid, filtered);
             if (cat) {
                 const title = document.getElementById('categoryTitle');
                 if (title) title.textContent = cat.charAt(0).toUpperCase() + cat.slice(1) + ' Collection';
             }
         }
     }
+
+    if (bestSellersGrid) {
+        renderProducts(bestSellersGrid, PRODUCTS.filter(p => p.bestSeller).slice(0, 4));
+    }
+
+    if (newArrivalsGrid) {
+        renderProducts(newArrivalsGrid, PRODUCTS.filter(p => p.newArrival).slice(0, 4));
+    }
+
     setupEventListeners();
     updateCart();
 }
 
-function renderProducts(productsToRender) {
-    const grid = document.getElementById('productGrid');
-    if(!grid) return;
+function renderProducts(gridElement, productsToRender) {
+    if(!gridElement) return;
     if(productsToRender.length === 0) {
-        grid.innerHTML = '<p style="grid-column: 1/-1; text-align:center; margin-top:4rem; color:#666;">No pieces found in this collection.</p>';
+        gridElement.innerHTML = '<p style="grid-column: 1/-1; text-align:center; margin-top:4rem; color:#666;">No pieces found in this collection.</p>';
         return;
     }
-    grid.innerHTML = productsToRender.map(p => `
+    gridElement.innerHTML = productsToRender.map(p => `
         <div class="product-card" onclick="openProduct(${p.id})">
             <div class="product-image-container">
                 <img src="${p.image}" class="product-image" alt="${p.name}">
@@ -134,13 +141,13 @@ function setupEventListeners() {
             e.target.classList.add('active');
             const cat = e.target.dataset.category;
             const filtered = cat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === cat);
-            renderProducts(filtered);
+            renderProducts(document.getElementById('productGrid'), filtered);
         });
     });
     document.getElementById('productSearch')?.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
         const filtered = PRODUCTS.filter(p => p.name.toLowerCase().includes(term) || p.category.toLowerCase().includes(term));
-        renderProducts(filtered);
+        renderProducts(document.getElementById('productGrid'), filtered);
     });
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('mainNav');

@@ -301,3 +301,113 @@ footer {
     .newsletter-form { flex-direction: column; align-items: center; }
     .newsletter-form input { width: 100%; }
 }
+
+/* --- PROMO BANNER --- */
+.promo-banner {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 0.8rem 0;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1100;
+}
+.nav { top: 40px !important; } /* Adjust nav to be below banner */
+
+/* --- WHY CHOOSE US (Value Props) --- */
+.value-props {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    padding: 8rem 5%;
+    text-align: center;
+    background: #fff;
+}
+.prop-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.prop-item .icon {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+.prop-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.prop-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+/* --- REVIEWS SECTION --- */
+.reviews-section {
+    padding: 10rem 5%;
+    background: var(--bg-soft);
+}
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+.review-card {
+    padding: 3rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: var(--transition);
+}
+.review-card:hover { transform: translateY(-10px); border-color: #000; }
+.review-stars { color: var(--gold); margin-bottom: 1.5rem; font-size: 0.8rem; }
+.review-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+.review-author {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* --- BEST SELLERS / NEW ARRIVALS --- */
+.collection-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+.collection-label h2 {
+    font-size: 3rem;
+}
+.collection-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+    transition: opacity 0.3s;
+}
+.collection-link:hover { opacity: 0.5; }
+
+@media (max-width: 768px) {
+    .value-props { grid-template-columns: 1fr; gap: 4rem; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .nav { top: 0 !important; }
+    .promo-banner { display: none; }
+}
