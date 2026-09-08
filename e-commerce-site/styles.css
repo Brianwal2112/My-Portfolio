@@ -107,7 +107,7 @@ h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 700; }
     text-decoration: none; text-transform: uppercase; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px;
 }
 footer { background: #fafafa; padding: 6rem 5% 3rem; border-top: 1px solid var(--border); }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 5rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 5rem; }
 .footer-col h4 { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 2rem; }
 .footer-links { list-style: none; }
 .footer-links li { margin-bottom: 0.8rem; }
@@ -119,4 +119,64 @@ footer { background: #fafafa; padding: 6rem 5% 3rem; border-top: 1px solid var(-
     .modal-grid { grid-template-columns: 1fr; }
     .modal-visual img { height: 400px; }
     .cart-panel { width: 100%; right: -100%; }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+.btn-premium {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+.btn-premium:hover::before {
+    left: 100%;
+}
+.product-card {
+    background: #fff;
+    padding: 10px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid transparent;
+}
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border-color: var(--border);
+}
+footer {
+    background: #fafafa;
+    padding: 6rem 5% 3rem;
+    border-top: 1px solid var(--border);
+}
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+.footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
 }
