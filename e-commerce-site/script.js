@@ -1,10 +1,10 @@
 const PRODUCTS = [
-    { id: 1, name: 'Noir Silk Blazer', price: 850, category: 'apparel', image: 'https://images.unsplash.com/photo-1591047139829-d95777367676?auto=format&fit=crop&w=800&q=80', desc: 'Tailored from 100% Italian silk, this blazer defines modern elegance. Perfect for evening gala or high-stakes business.' },
-    { id: 2, name: 'Ivory Cashmere Knit', price: 420, category: 'apparel', image: 'https://images.unsplash.com/photo-1576528647589-C77769277226?auto=format&fit=crop&w=800&q=80', desc: 'Pure Mongolian cashmere. A lightweight yet warm essential for the winter wardrobe.' },
-    { id: 3, name: 'Studio Tailored Trousers', price: 310, category: 'apparel', image: 'https://images.unsplash.com/photo-1594633926227-d4b235d6932b?auto=format&fit=crop&w=800&q=80', desc: 'Precision cut trousers with a subtle taper. Designed for the modern architectural silhouette.' },
-    { id: 4, name: 'Minimalist Leather Tote', price: 1200, category: 'accessories', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', desc: 'Hand-stitched calfskin leather. Unlined for a natural feel, featuring a single internal pocket.' },
-    { id: 5, name: 'Sleek Monochrome Watch', price: 2100, category: 'jewelry', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80', desc: 'Sapphire crystal glass with a matte black titanium case. A timeless piece of engineering.' },
-    { id: 6, name: 'Architectural Heel', price: 680, category: 'accessories', image: 'https://images.unsplash.com/photo-1543163521-16127f6576bc?auto=format&fit=crop&w=800&q=80', desc: 'Sculpted heel designed for balance and form. A statement piece for the bold.' },
+    { id: 1, name: 'Noir Silk Blazer', price: 850, category: 'apparel', image: 'https://images.unsplash.com/photo-1591047139829-d95777367676?auto=format&fit=crop&w=800&q=80', desc: 'Tailored from 100% Italian silk, this blazer defines modern elegance. A masterclass in minimal tailoring for the modern professional.' },
+    { id: 2, name: 'Ivory Cashmere Knit', price: 420, category: 'apparel', image: 'https://images.unsplash.com/photo-1576528647589-C77769277226?auto=format&fit=crop&w=800&q=80', desc: 'Pure Mongolian cashmere. Breathable, soft, and timeless. A piece designed to last a lifetime.' },
+    { id: 3, name: 'Studio Tailored Trousers', price: 310, category: 'apparel', image: 'https://images.unsplash.com/photo-1594633926227-d4b235d6932b?auto=format&fit=crop&w=800&q=80', desc: 'precision-cut trousers with a slight taper. Crafted from sustainable wool blends.' },
+    { id: 4, name: 'Minimalist Leather Tote', price: 1200, category: 'accessories', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', desc: 'Hand-stitched Italian calfskin leather. Structured, spacious, and unlined for a natural luxury feel.' },
+    { id: 5, name: 'Sleek Monochrome Watch', price: 2100, category: 'jewelry', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80', desc: 'Sapphire crystal and matte black titanium. A timepiece that balances architectural precision with luxury.' },
+    { id: 6, name: 'Architectural Heel', price: 680, category: 'accessories', image: 'https://images.unsplash.com/photo-1543163521-16127f6576bc?auto=format&fit=crop&w=800&q=80', desc: 'Sculpted silhouette designed for balance and poise. A statement piece in modern footwear.' },
 ];
 
 let cart = JSON.parse(localStorage.getItem('luxe-cart')) || [];
@@ -18,12 +18,14 @@ function init() {
 function renderProducts(productsToRender) {
     const grid = document.getElementById('productGrid');
     if(productsToRender.length === 0) {
-        grid.innerHTML = '<p style="grid-column: 1/-1; text-align:center; margin-top:4rem; color:#666;">No products found in this collection.</p>';
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align:center; margin-top:4rem; color:#666;">No pieces found in this collection.</p>';
         return;
     }
     grid.innerHTML = productsToRender.map(p => `
         <div class="product-card" onclick="openProduct(${p.id})">
-            <img src="${p.image}" class="product-image" alt="${p.name}">
+            <div class="product-image-container">
+                <img src="${p.image}" class="product-image" alt="${p.name}">
+            </div>
             <div class="product-info">
                 <span class="product-name">${p.name}</span>
                 <span class="product-price">$${p.price}</span>
@@ -108,7 +110,6 @@ function setupEventListeners() {
     document.getElementById('cartOverlay').addEventListener('click', closeCart);
     document.getElementById('closeModal').addEventListener('click', closeModal);
     
-    // Category Filtering
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -119,7 +120,6 @@ function setupEventListeners() {
         });
     });
 
-    // Search Functionality
     document.getElementById('productSearch').addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
         const filtered = PRODUCTS.filter(p => p.name.toLowerCase().includes(term) || p.category.toLowerCase().includes(term));
