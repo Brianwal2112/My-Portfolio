@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUXE | High-End Minimalist Commerce</title>
+    <title>LUMINA | High-End Minimalist Commerce</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,59 +11,67 @@
 </head>
 <body>
     <nav class="nav" id="mainNav">
-        <a href="index.html" class="logo">LUXE<span>.</span></a>
-        <div class="search-container">
-            <input type="text" id="productSearch" placeholder="Search collection...">
-        </div>
+        <a href="index.html" class="logo">LUMINA<span>.</span></a>
         <ul class="nav-links">
-            <li><a href="#shop">Collections</a></li>
-            <li><a href="#about">Philosophy</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">Philosophy</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="cart-trigger" id="cartBtn">
-            <span>BAG</span>
-            <span class="cart-count">0</span>
+        <div class="nav-icons">
+            <div class="icon-btn" id="accountBtn">ACCOUNT</div>
+            <div class="icon-btn" id="cartBtn">BAG <span class="badge">0</span></div>
         </div>
     </nav>
 
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80" class="hero-img" alt="Luxury Store">
+        <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf//auto=format&fit=crop&w=1600&q=80" class="hero-img" alt="Luxury Home">
         <div class="hero-content">
-            <h1>The Art of <br>Essentialism.</h1>
-            <a href="#shop" class="btn-luxury">Explore Collection</a>
+            <h1>Elevated Living. <br>Pure Form.</h1>
+            <a href="shop.html" class="btn-premium">Explore the Collection</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">
+            <span class="label">Curated Worlds</span>
+            <h2>The Collections</h2>
+        </div>
+        <div class="category-grid">
+            <div class="category-card" onclick="location.href='shop.html?cat=apparel'">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" class="category-img" alt="Apparel">
+                <div class="category-overlay"><span class="category-name">Apparel</span></div>
+            </div>
+            <div class="category-card" onclick="location.href='shop.html?cat=accessories'">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" class="category-img" alt="Accessories">
+                <div class="category-overlay"><span class="category-name">Accessories</span></div>
+            </div>
+            <div class="category-card" onclick="location.href='shop.html?cat=jewelry'">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" class="category-img" alt="Jewelry">
+                <div class="category-overlay"><span class="category-name">Jewelry</span></div>
+            </div>
         </div>
     </section>
 
     <section id="shop" class="section">
         <div class="section-title">
-            <span class="label">Curated Selection</span>
-            <h2>Seasonal Essentials</h2>
+            <span class="label">Featured</span>
+            <h2>Essential Pieces</h2>
         </div>
-        
-        <div class="filter-bar" id="filterBar">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="apparel">Apparel</button>
-            <button class="filter-btn" data-category="accessories">Accessories</button>
-            <button class="filter-btn" data-category="jewelry">Jewelry</button>
-        </div>
-
-        <div class="product-grid" id="productGrid">
-            <!-- Products injected by JS -->
-        </div>
+        <div class="product-grid" id="featuredGrid"></div>
     </section>
 
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content">
             <span id="closeModal" class="close-modal">&times;</span>
             <div class="modal-grid">
-                <div class="modal-visual">
-                    <img src="" id="modalImage" alt="Product">
-                </div>
+                <div class="modal-visual"><img src="" id="modalImage" alt="Product"></div>
                 <div class="modal-info">
                     <span class="label" id="modalCategory">Category</span>
-                    <h2 id="modalName">Product Name</h2>
-                    <p id="modalPrice" class="product-price">$0.00</p>
-                    <p id="modalDesc" class="description">Detailed description of the product's materials and craftsmanship.</p>
-                    <button id="modalAddBtn" class="btn-luxury" style="width:100%; border:none; cursor:pointer; margin-top:2rem;">Add to Bag</button>
+                    <h2 id="modalName">Product</h2>
+                    <p id="modalPrice" class="product-price">$0</p>
+                    <p id="modalDesc" class="description"></p>
+                    <button id="modalAddBtn" class="btn-premium" style="width:100%; border:none; cursor:pointer;">Add to Bag</button>
                 </div>
             </div>
         </div>
@@ -77,13 +85,45 @@
         </div>
         <div class="cart-items" id="cartItems"></div>
         <div class="cart-footer">
-            <div class="total-row">
-                <span>Total</span>
-                <span id="cartTotal">$0.00</span>
-            </div>
+            <div class="total-row"><span>Total</span><span id="cartTotal">$0</span></div>
             <a href="checkout.html" class="btn-checkout">Proceed to Checkout</a>
         </div>
     </div>
+
+    <footer style="padding: 6rem 5% 3rem; background: #fafafa; border-top: 1px solid var(--border);">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 class="serif">Lumina.</h4>
+                <p style="color:var(--text-muted); font-size:0.8rem">Elevating the everyday through minimal design and conscious craftsmanship.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul class="footer-links">
+                    <li><a href="shop.html">All Collections</a></li>
+                    <li><a href="shop.html?cat=apparel">Apparel</a></li>
+                    <li><a href="shop.html?cat=accessories">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">Philosophy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Account</h4>
+                <ul class="footer-links">
+                    <li><a href="account.html">My Account</a></li>
+                    <li><a href="tracking.html">Order Tracking</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align:center; padding-top:3rem; font-size:0.7rem; color:var(--text-muted); letter-spacing:1px;">
+            &copy; 2026 LUMINA STUDIO. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
