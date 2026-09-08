@@ -12,10 +12,12 @@
 <body>
     <nav class="nav" id="mainNav">
         <a href="index.html" class="logo">LUXE<span>.</span></a>
+        <div class="search-container">
+            <input type="text" id="productSearch" placeholder="Search collection...">
+        </div>
         <ul class="nav-links">
             <li><a href="#shop">Collections</a></li>
             <li><a href="#about">Philosophy</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="cart-trigger" id="cartBtn">
             <span class="cart-icon">BAG</span>
@@ -36,20 +38,45 @@
             <span class="label">Curated Selection</span>
             <h2>Seasonal Essentials</h2>
         </div>
+        
+        <div class="filter-bar" id="filterBar">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="apparel">Apparel</button>
+            <button class="filter-btn" data-category="accessories">Accessories</button>
+            <button class="filter-btn" data-category="jewelry">Jewelry</button>
+        </div>
+
         <div class="product-grid" id="productGrid">
             <!-- Products injected by JS -->
         </div>
     </section>
 
+    <!-- PRODUCT MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <span id="closeModal" class="close-modal">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-visual">
+                    <img src="" id="modalImage" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <span class="label" id="modalCategory">Category</span>
+                    <h2 id="modalName">Product Name</h2>
+                    <p id="modalPrice" class="product-price">$0.00</p>
+                    <p id="modalDesc" class="description">Detailed description of the product's materials and craftsmanship.</p>
+                    <button id="modalAddBtn" class="btn-luxury" style="width:100%; border:none; cursor:pointer; margin-top:2rem;">Add to Bag</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-panel" id="cartPanel">
         <div class="cart-header">
-            <h3>Your Bag</h3>
+            <h3 class="serif">Your Bag</h3>
             <span id="closeCart" style="cursor:pointer">CLOSE</span>
         </div>
-        <div class="cart-items" id="cartItems">
-            <!-- Items injected by JS -->
-        </div>
+        <div class="cart-items" id="cartItems"></div>
         <div class="cart-footer">
             <div class="total-row">
                 <span>Total</span>
