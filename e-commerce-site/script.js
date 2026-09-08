@@ -1,10 +1,22 @@
 const PRODUCTS = [
-    { id: 1, name: 'Noir Silk Blazer', price: 850, category: 'apparel', image: 'https://images.unsplash.com/photo-1591047139829-d95777367676?auto=format&fit=crop&w=800&q=80', desc: 'Tailored from 100% Italian silk, this blazer defines modern elegance.' },
-    { id: 2, name: 'Ivory Cashmere Knit', price: 420, category: 'apparel', image: 'https://images.unsplash.com/photo-1576528647589-C77769277226?auto=format&fit=crop&w=800&q=80', desc: 'Pure Mongolian cashmere. A lightweight yet warm essential.' },
-    { id: 3, name: 'Studio Tailored Trousers', price: 310, category: 'apparel', image: 'https://images.unsplash.com/photo-1594633926227-d4b235d6932b?auto=format&fit=crop&w=800&q=80', desc: 'Precision cut trousers with a subtle taper.' },
-    { id: 4, name: 'Minimalist Leather Tote', price: 1200, category: 'accessories', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', desc: 'Hand-stitched Italian calfskin leather.' },
-    { id: 5, name: 'Sleek Monochrome Watch', price: 2100, category: 'jewelry', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80', desc: 'Sapphire crystal glass with a matte black titanium case.' },
-    { id: 6, name: 'Architectural Heel', price: 680, category: 'accessories', image: 'https://images.unsplash.com/photo-1543163521-16127f6576bc?auto=format&fit=crop&w=800&q=80', desc: 'Sculpted silhouette designed for balance and poise.' },
+    // APPAREL - High End Fashion
+    { id: 1, name: 'Noir Silk Blazer', price: 850, category: 'apparel', image: 'https://images.unsplash.com/photo-1591047139829-d95777367676?auto=format&fit=crop&w=800&q=80', desc: 'Tailored from 100% Italian silk, this blazer defines modern elegance. A masterclass in minimal tailoring for the modern professional.' },
+    { id: 2, name: 'Ivory Cashmere Knit', price: 420, category: 'apparel', image: 'https://images.unsplash.com/photo-1576528647589-C77769277226?auto=format&fit=crop&w=800&q=80', desc: 'Pure Mongolian cashmere. Breathable, soft, and timeless. A piece designed to last a lifetime.' },
+    { id: 3, name: 'Studio Tailored Trousers', price: 310, category: 'apparel', image: 'https://images.unsplash.com/photo-1594633926227-d4b235d6932b?auto=format&fit=crop&w=800&q=80', desc: 'Precision cut trousers with a subtle taper. Crafted from sustainable wool blends.' },
+    { id: 7, name: 'Midnight Velvet Gown', price: 1400, category: 'apparel', image: 'https://images.unsplash.com/photo-1566174053879-315B377f526f?auto=format&fit=crop&w=800&q=80', desc: 'Hand-stitched midnight velvet. A sculptural piece for evening galas and red-carpet events.' },
+    { id: 8, name: 'Alabaster Linen Shirt', price: 280, category: 'apparel', image: 'https://images.unsplash.com/photo-1598033129183-c87b67750810?auto=format&fit=crop&w=800&q=80', desc: '100% organic linen. Breathable, lightweight, and effortlessly refined.' },
+
+    // ACCESSORIES - Leather & Studio
+    { id: 4, name: 'Minimalist Leather Tote', price: 1200, category: 'accessories', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', desc: 'Hand-stitched Italian calfskin leather. Structured, spacious, and unlined for a natural luxury feel.' },
+    { id: 6, name: 'Architectural Heel', price: 680, category: 'accessories', image: 'https://images.unsplash.com/photo-1543163521-16127f6576bc?auto=format&fit=crop&w=800&q=80', desc: 'Sculpted silhouette designed for balance and poise. A statement piece in modern footwear.' },
+    { id: 9, name: 'Suede Chelsea Boot', price: 550, category: 'accessories', image: 'https://images.unsplash.com/photo-1638242657605-7ed692672703?auto=format&fit=crop&w=800&q=80', desc: 'Premium water-resistant suede. A timeless silhouette for urban exploration.' },
+    { id: 10, name: 'Aviator Frame Onyx', price: 320, category: 'accessories', image: 'https://images.unsplash.com/photo-1572635196237-14b3f17dfae0?auto=format&fit=crop&w=800&q=80', desc: 'Polarized lenses with a lightweight titanium frame. The ultimate in visual clarity.' },
+
+    // JEWELRY - Fine Metals
+    { id: 5, name: 'Sleek Monochrome Watch', price: 2100, category: 'jewelry', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80', desc: 'Sapphire crystal glass with a matte black titanium case. A timeless piece of engineering.' },
+    { id: 11, name: 'Gold Orbital Ring', price: 1800, category: 'jewelry', image: 'https://images.unsplash.com/photo-1605100804763-247867157a70?auto=format&fit=crop&w=800&q=80', desc: '18k solid gold with a brushed matte finish. A singular, sculptural statement.' },
+    { id: 12, name: 'Diamond Studs', price: 3500, category: 'jewelry', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60//auto=format&fit=crop&w=800&q=80', desc: 'Conflict-free diamonds set in platinum. Pure, radiant brilliance in a minimal form.' },
+    { id: 13, name: 'Silver Link Bracelet', price: 720, category: 'jewelry', image: 'https://images.unsplash.com/photo-1611591437289-567d78663949?auto=format&fit=crop&w=800&q=80', desc: 'Hand-linked sterling silver. A balanced blend of strength and elegance.' },
 ];
 
 let cart = JSON.parse(localStorage.getItem('lumina-cart')) || [];
@@ -32,6 +44,10 @@ function init() {
 function renderProducts(productsToRender) {
     const grid = document.getElementById('productGrid');
     if(!grid) return;
+    if(productsToRender.length === 0) {
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align:center; margin-top:4rem; color:#666;">No pieces found in this collection.</p>';
+        return;
+    }
     grid.innerHTML = productsToRender.map(p => `
         <div class="product-card" onclick="openProduct(${p.id})">
             <div class="product-image-container">
