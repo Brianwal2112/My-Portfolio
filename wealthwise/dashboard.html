@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - WealthWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="#" class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>WealthWise</span>
+            </a>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active"><i class="fas fa-th-large"></i> Dashboard</a>
+                <a href="#" class="nav-item"><i class="fas fa-wallet"></i> Portfolio</a>
+                <a href="#" class="nav-item"><i class="fas fa-exchange-alt"></i> Transactions</a>
+                <a href="#" class="nav-item"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <a href="#" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">JD</div>
+                    <div class="user-info">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-plan">Pro Plan</span>
+                    </div>
+                </div>
+                <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Welcome back, John!</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary"><i class="fas fa-plus"></i> Add Asset</button>
+                    <button class="btn btn-primary">Deposit Funds</button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Portfolio Overview -->
+                <div class="card portfolio-overview">
+                    <div class="card-header">
+                        <h3>Total Balance</h3>
+                        <span class="change positive">+12.5% <i class="fas fa-arrow-up"></i></span>
+                    </div>
+                    <div class="balance-value">$124,592.84</div>
+                    <div class="chart-container">
+                        <svg viewBox="0 0 400 100" class="main-chart">
+                            <defs>
+                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M0,80 Q50,70 100,60 T200,40 T300,30 T400,20 L400,100 L0,100 Z" fill="url(#chartGradient)" />
+                            <path d="M0,80 Q50,70 100,60 T200,40 T300,30 T400,20" fill="none" stroke="#6366f1" stroke-width="3" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Asset Allocation -->
+                <div class="card assets-card">
+                    <div class="card-header">
+                        <h3>Your Assets</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="asset-list">
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <i class="fab fa-apple"></i>
+                                <div>
+                                    <span class="asset-name">Apple Inc.</span>
+                                    <span class="asset-ticker">AAPL</span>
+                                </div>
+                            </div>
+                            <div class="asset-stats">
+                                <span class="asset-price">$182.52</span>
+                                <span class="asset-change positive">+2.4%</span>
+                            </div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <i class="fab fa-microsoft"></i>
+                                <div>
+                                    <span class="asset-name">Microsoft Corp.</span>
+                                    <span class="asset-ticker">MSFT</span>
+                                </div>
+                            </div>
+                            <div class="asset-stats">
+                                <span class="asset-price">$378.91</span>
+                                <span class="asset-change positive">+1.8%</span>
+                            </div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <i class="fab fa-google"></i>
+                                <div>
+                                    <span class="asset-name">Alphabet Inc.</span>
+                                    <span class="asset-ticker">GOOGL</span>
+                                </div>
+                            </div>
+                            <div class="asset-stats">
+                                <span class="asset-price">$141.80</span>
+                                <span class="asset-change negative">-0.5%</span>
+                            </div>
+                        </div>
+                        <div class="asset-item">
+                            <div class="asset-info">
+                                <i class="fab fa-bitcoin"></i>
+                                <div>
+                                    <span class="asset-name">Bitcoin</span>
+                                    <span class="asset-ticker">BTC</span>
+                                </div>
+                            </div>
+                            <div class="asset-stats">
+                                <span class="asset-price">$43,892.15</span>
+                                <span class="asset-change positive">+3.4%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Insights -->
+                <div class="card insights-card">
+                    <div class="card-header">
+                        <h3>AI Insights</h3>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="insight-text">
+                            <p>Strong buy signal for <strong>AAPL</strong> based on Q3 earnings projections.</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="insight-text">
+                            <p>Portfolio diversification alert: Over-exposed to <strong>Technology</strong> sector.</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon"><i class="fas fa-info-circle"></i></div>
+                        <div class="insight-text">
+                            <p>Market trend: <strong>S&P 500</strong> showing strong bullish momentum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
