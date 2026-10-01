@@ -1,98 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager App - Project Detail</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Task Manager case study — a local-first productivity dashboard built with HTML, CSS, and JavaScript.">
+  <title>Task Manager | Project Case Study</title>
+  <link rel="stylesheet" href="task-manager-case-study.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="nav-logo">Portfolio</h1>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li>
-                        <button id="theme-toggle" class="theme-toggle-btn">
-                            <span class="toggle-icon">🌙</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <header class="case-header">
+    <a class="brand" href="index.html" aria-label="Back to portfolio"><span>BW</span> / PORTFOLIO</a>
+    <nav aria-label="Project navigation"><a href="projects.html">All projects</a><a href="index.html#contact">Contact</a></nav>
+  </header>
 
-    <main>
-        <section class="project-detail-section">
-            <div class="container">
-                <div class="project-header">
-                    <h1>Task Manager App</h1>
-                    <div class="project-meta">
-                        <span class="project-role">Full Stack Development</span>
-                        <span class="project-tech">Vue.js, Firebase, Tailwind CSS</span>
-                    </div>
-                </div>
-                
-                <div class="project-content">
-                    <div class="project-image">
-                        <img src="https://placehold.co/800x450/1e1e1e/bb86fc?text=Task+Manager+App" alt="Task Manager App Screenshot">
-                    </div>
-                    
-                    <div class="project-description">
-                        <h2>Project Overview</h2>
-                        <p>A productivity application with drag-and-drop functionality, team collaboration, and deadline tracking. This app helps teams stay organized and manage their tasks efficiently.</p>
-                        
-                        <h3>Features</h3>
-                        <ul>
-                            <li>Drag-and-drop task management interface</li>
-                            <li>Team collaboration with shared boards</li>
-                            <li>Deadline tracking and notifications</li>
-                            <li>Progress visualization and analytics</li>
-                            <li>File attachments and comments</li>
-                            <li>Cross-device synchronization</li>
-                            <li>Customizable workflows</li>
-                        </ul>
-                        
-                        <h3>Challenges & Solutions</h3>
-                        <p>Implementing smooth drag-and-drop functionality that worked consistently across different browsers was challenging. I used Vue's ecosystem along with specialized drag-and-drop libraries to create an intuitive and responsive interface.</p>
-                        
-                        <h3>Technologies Used</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">Vuex</span>
-                            <span class="tech-tag">Vue Router</span>
-                            <span class="tech-tag">Dragula</span>
-                            <span class="tech-tag">Chart.js</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-links">
-                    <a href="task-manager-app/index.html" target="_blank" class="project-external-link">Visit Live Site</a>
-                    <a href="https://github.com/yourusername/task-manager-project" target="_blank" class="project-github-link">View Source Code</a>
-                </div>
-                
-                <div class="project-navigation">
-                    <a href="ecommerce.html" class="prev-project">&larr; Previous Project: E-commerce Website</a>
-                    <a href="weather-dashboard.html" class="next-project">Next Project: Weather Dashboard &rarr;</a>
-                </div>
-            </div>
-        </section>
-    </main>
+  <main>
+    <section class="case-hero shell">
+      <div class="hero-copy">
+        <p class="kicker">PROJECT 02 / PRODUCTIVITY</p>
+        <h1>Task<br><em>Manager.</em></h1>
+        <p class="lede">A focused productivity dashboard that helps people capture work, organize priorities, and keep momentum without adding noise.</p>
+        <div class="actions"><a class="button button-primary" href="task-manager-app/index.html" target="_blank" rel="noopener">Live demo <span>↗</span></a><a class="button" href="https://github.com/yourusername/task-manager-project" target="_blank" rel="noopener">View source code <span>↗</span></a></div>
+        <dl class="hero-facts"><div><dt>Type</dt><dd>Frontend application</dd></div><div><dt>Built with</dt><dd>HTML · CSS · JavaScript</dd></div><div><dt>Data</dt><dd>Browser localStorage</dd></div></dl>
+      </div>
+      <div class="hero-preview preview-frame"><div class="frame-bar"><span>task-manager-app / dashboard</span><span class="live-dot">● LIVE PREVIEW</span></div><iframe src="task-manager-app/index.html" title="Live preview of the Task Manager dashboard" loading="eager"></iframe></div>
+    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
+    <section class="section shell overview"><div class="section-intro"><p class="kicker">01 / OVERVIEW</p><h2>Make the next<br><em>move obvious.</em></h2></div><div class="overview-copy"><p class="lead-copy">Task Manager is a browser-based workspace for turning a list of responsibilities into a clear daily view. It gives a solo user one place to create tasks, set due dates and priorities, review progress, and clean up completed work.</p><div class="overview-grid"><article><span class="number">01</span><h3>The problem</h3><p>Scattered notes make it harder to see what matters now and what can wait.</p></article><article><span class="number">02</span><h3>The audience</h3><p>Useful for students, makers, and small teams who need a lightweight task system.</p></article><article><span class="number">03</span><h3>The purpose</h3><p>Reduce friction between deciding what to do and actually doing it.</p></article></div></div></section>
 
-    <script src="script.js"></script>
+    <section class="section shell dark-section"><div class="section-intro"><p class="kicker">02 / CAPABILITIES</p><h2>Small actions,<br><em>clear progress.</em></h2></div><div class="feature-grid"><article class="feature"><span class="feature-icon">＋</span><h3>Create tasks</h3><p>Add a title, description, due date, and priority from the dashboard form.</p></article><article class="feature"><span class="feature-icon">✓</span><h3>Manage status</h3><p>Mark work complete or undo it while stats and task views update immediately.</p></article><article class="feature"><span class="feature-icon">⌕</span><h3>Filter work</h3><p>Browse all tasks by status and priority to narrow the list to what matters.</p></article><article class="feature"><span class="feature-icon">✎</span><h3>Edit and delete</h3><p>Update task titles in place or remove tasks with a confirmation step.</p></article><article class="feature"><span class="feature-icon">▦</span><h3>Calendar view</h3><p>Move through months and see due dates in a dedicated calendar surface.</p></article><article class="feature"><span class="feature-icon">↗</span><h3>Responsive UI</h3><p>The layout adapts from a sidebar dashboard to a compact mobile workspace.</p></article></div></section>
+
+    <section class="section shell"><div class="section-intro"><p class="kicker">03 / THE STACK</p><h2>Simple tools,<br><em>deliberate choices.</em></h2></div><div class="stack-list"><div><span>Frontend</span><strong>HTML5 · CSS3 · Vanilla JavaScript</strong></div><div><span>Data layer</span><strong>localStorage persistence</strong></div><div><span>Interface</span><strong>Responsive CSS · semantic forms</strong></div><div><span>Deployment</span><strong>Static hosting ready</strong></div></div></section>
+
+    <section class="section shell process-section"><div class="section-intro"><p class="kicker">04 / HOW IT WORKS</p><h2>A loop that<br><em>keeps moving.</em></h2></div><div class="workflow"><div><span>01</span><b>Create</b><p>Capture the work.</p></div><i>→</i><div><span>02</span><b>Organize</b><p>Set priority and date.</p></div><i>→</i><div><span>03</span><b>Update</b><p>Track the state.</p></div><i>→</i><div><span>04</span><b>Complete</b><p>Close the loop.</p></div></div></section>
+
+    <section class="section shell showcase"><div class="section-intro"><p class="kicker">05 / UI SHOWCASE</p><h2>The product,<br><em>in context.</em></h2></div><div class="gallery"><figure class="gallery-main preview-frame"><div class="frame-bar"><span>Dashboard / desktop</span><span>01</span></div><iframe src="task-manager-app/index.html" title="Task Manager desktop dashboard preview" loading="lazy"></iframe><figcaption>Dashboard overview · live project surface</figcaption></figure><figure class="gallery-side preview-frame"><div class="frame-bar"><span>Tasks / focused view</span><span>02</span></div><iframe src="task-manager-app/tasks.html" title="Task Manager tasks view preview" loading="lazy"></iframe><figcaption>Task filtering · status and priority controls</figcaption></figure><div class="mobile-card"><span class="kicker">RESPONSIVE BY DEFAULT</span><h3>Useful at every size.</h3><p>Navigation, cards, and forms reflow for smaller screens instead of simply shrinking.</p><a href="task-manager-app/index.html" target="_blank" rel="noopener">Open the live app ↗</a></div></div></section>
+
+    <section class="section shell dark-section highlights"><div class="section-intro"><p class="kicker">06 / DEVELOPMENT HIGHLIGHTS</p><h2>Proof in the<br><em>implementation.</em></h2></div><div class="highlight-list"><article><span>01</span><div><h3>State management</h3><p>A small, readable state model keeps task mutations in sync across stats, recent tasks, filters, calendar, and team views.</p></div></article><article><span>02</span><div><h3>Data handling</h3><p>Task records are serialized to localStorage, so the workspace remains useful between browser sessions without a server dependency.</p></div></article><article><span>03</span><div><h3>Interaction feedback</h3><p>Confirmation prompts and lightweight notifications make destructive and successful actions clear to the user.</p></div></article><article><span>04</span><div><h3>Responsive design</h3><p>The same product language carries across dashboard, list, calendar, and team surfaces at desktop and mobile widths.</p></div></article></div></section>
+
+    <section class="section shell case-study"><div class="section-intro"><p class="kicker">07 / CASE STUDY</p><h2>From scattered<br><em>to focused.</em></h2></div><div class="case-grid"><article><span>Problem</span><p>A task list is only useful when it helps users understand priority, ownership, and next action at a glance.</p></article><article><span>Approach</span><p>I organized the experience around a dashboard first, then extended the same data into tasks, calendar, and team views.</p></article><article><span>Solution</span><p>A responsive task workspace with CRUD actions, filtering, status summaries, and persistent browser data.</p></article><article><span>Result</span><p>A practical, low-friction productivity tool that demonstrates thoughtful frontend architecture.</p></article></div></section>
+
+    <section class="final-cta shell"><p class="kicker">LET'S BUILD SOMETHING USEFUL</p><h2>Interested in what<br><em>I can build?</em></h2><div class="actions"><a class="button button-primary" href="task-manager-app/index.html" target="_blank" rel="noopener">View live project ↗</a><a class="button" href="https://github.com/yourusername/task-manager-project" target="_blank" rel="noopener">View source code ↗</a><a class="button" href="index.html#contact">Contact me ↗</a></div></section>
+  </main>
+  <footer class="case-footer shell"><span>© 2026 Brian Walsh</span><a href="projects.html">Back to projects ↑</a></footer>
 </body>
 </html>
