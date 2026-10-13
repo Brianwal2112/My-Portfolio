@@ -1,6 +1,17 @@
 document.addEventListener('DOMContentLoaded',()=>{
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.12});
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -8%'});
   document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  const sections=[...document.querySelectorAll('main section[id]')];
+  const navLinks=[...document.querySelectorAll('.desktop-nav a,.mobile-nav a')];
+  const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)navLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')===`#${entry.target.id}`))}),{rootMargin:'-42% 0px -48%'});
+  sections.forEach(section=>sectionObserver.observe(section));
+  document.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',event=>{const target=document.querySelector(link.getAttribute('href'));if(!target)return;event.preventDefault();target.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'});history.replaceState(null,'',link.getAttribute('href'))}));
+  const interactive=document.querySelectorAll('.button,.project-card,.service-list>div,.skill-grid>div,.process-step,.text-link,.contact-details a');
+  interactive.forEach(el=>el.addEventListener('pointerdown',()=>el.classList.add('is-pressed')));
+  interactive.forEach(el=>el.addEventListener('pointerup',()=>el.classList.remove('is-pressed')));
+  interactive.forEach(el=>el.addEventListener('pointerleave',()=>el.classList.remove('is-pressed')));
+  if(!reduceMotion&&window.matchMedia('(pointer:fine)').matches){document.querySelectorAll('.project-card').forEach(card=>{card.addEventListener('pointermove',event=>{const rect=card.getBoundingClientRect();const x=(event.clientX-rect.left)/rect.width-.5;const y=(event.clientY-rect.top)/rect.height-.5;card.style.setProperty('--tilt-x',`${(-y*2.2).toFixed(2)}deg`);card.style.setProperty('--tilt-y',`${(x*2.2).toFixed(2)}deg`)});card.addEventListener('pointerleave',()=>{card.style.setProperty('--tilt-x','0deg');card.style.setProperty('--tilt-y','0deg')})})}
   const menu=document.querySelector('.mobile-nav'), trigger=document.querySelector('.menu-trigger');
   trigger?.addEventListener('click',()=>{const open=menu.classList.toggle('open');trigger.setAttribute('aria-expanded',open)});
   menu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');trigger.setAttribute('aria-expanded','false')}));
